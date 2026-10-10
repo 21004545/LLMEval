@@ -41,18 +41,19 @@ class GeminiInterface(AIInterface):
             prompt: The prompt to send.
 
         Returns:
-            The Gemini response, or None if an error occurs.
+            The Gemini response. Raises on API errors or safety blocks.
         """
-        try:
-            response = self.client.models.generate_content(
-                model=self.model,
-                contents=prompt
-            )
-            return response.text
-
-        except Exception as e:
-            print(f"Error calling Gemini API: {str(e)}")
-            return None
+        # Errors propagate so the driver can record why a call failed
+        response = self.client.models.generate_content(
+            model=self.model,
+            contents=prompt
+        )
+        if not response.text:
+            # Safety blocks come back as an empty response, not an exception
+            block = response.prompt_feedback.block_reason if response.prompt_feedback else None
+            finish = response.candidates[0].finish_reason if response.candidates else None
+            raise RuntimeError(f"Gemini returned no text: block_reason={block}, finish_reason={finish}")
+        return response.text
 
     def set_model(self, model: str) -> None:
         """

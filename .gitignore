@@ -26,3 +26,8 @@ wheels/
 *.swp
 *.swo
 *~
+runs/
+.venv/
+runs/
+validation/validation_key.xlsx
+handover_notes/

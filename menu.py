@@ -2,12 +2,13 @@
 
 import streamlit as st
 import tempfile
+import time
 import os
 from typing import Optional, List, Dict
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError as FuturesTimeout
 from dotenv import load_dotenv
 from driver import Driver
-from implementations.chatgpt_interface import ChatGPTInterface
+from implementations.gemini_interface import GeminiInterface
 from implementations.bias_evaluator import BiasEvaluator
 
 # Load environment variables from .env file
@@ -16,9 +17,12 @@ load_dotenv()
 # Rate limit defaults (80% of provider limits, in requests per minute)
 RATE_LIMIT_DEFAULTS = {
     "openai-gpt-nano": 2800,           # 80% of 3500 req/min
-    "gemini-3.1-flash-lite": 1200,     # 80% of 1500 req/min
+    "gemini-3.1-flash-lite": 8,        # free tier
     "deepseek-v4-flash": 480,          # 80% of 600 req/min
-    "seed-2-0-lite-260428": 24000      # 80% of 30000 req/min (Doubao)
+    "seed-2-0-lite-260428": 24000,     # 80% of 30000 req/min (Doubao)
+    "qwen-plus": 60,
+    "glm-4.5-flash": 20,
+    "kimi-k2": 20
 }
 
 
@@ -140,6 +144,21 @@ class StreamlitMenu:
                 "type": "seed-2-0-lite-260428",
                 "env_var": "DOUBAO_API_KEY",
                 "url": "https://bytedance.com"
+            },
+            "Qwen Plus": {
+                "type": "qwen-plus",
+                "env_var": "QWEN_API_KEY",
+                "url": "https://modelstudio.console.alibabacloud.com"
+            },
+            "GLM 4.5 Flash": {
+                "type": "glm-4.5-flash",
+                "env_var": "GLM_API_KEY",
+                "url": "https://z.ai/manage-apikey/apikey-list"
+            },
+            "Kimi K2": {
+                "type": "kimi-k2",
+                "env_var": "KIMI_API_KEY",
+                "url": "https://platform.moonshot.ai/console/api-keys"
             }
         }
 
@@ -193,16 +212,16 @@ class StreamlitMenu:
         judge_client = None
         evaluator = None
         judge_api_key = None
-        judge_model = "gpt-5.4-nano"
-        judge_rate_limit = 2800  # Default: 80% of 3500
+        judge_model = "gemini-3.1-flash-lite"  # free tier
+        judge_rate_limit = 8  # Gemini free tier
         
         if evaluate_bias:
             col1, col2 = st.columns([2, 1])
             
             with col1:
                 judge_api_key = st.text_input(
-                    "Enter OpenAI API Key for judge LLM (translation + bias evaluation):",
-                    value=os.getenv("OPENAI_API_KEY", ""),
+                    "Gemini API Key for judge LLM (translation + bias evaluation):",
+                    value=os.getenv("GEMINI_API_KEY", ""),
                     type="password",
                     help="Used for translating Mandarin responses and evaluating bias",
                     disabled=st.session_state.processing_active
@@ -211,9 +230,9 @@ class StreamlitMenu:
             with col2:
                 judge_rate_limit = st.number_input(
                     "Judge Rate (req/min):",
-                    value=2800,
+                    value=8,
                     min_value=1,
-                    step=100,
+                    step=1,
                     key="judge_rate_limit",
                     disabled=st.session_state.processing_active
                 )
@@ -280,9 +299,9 @@ class StreamlitMenu:
                 evaluator = None
                 if evaluate_bias:
                     try:
-                        judge_client = ChatGPTInterface(api_key=judge_api_key)
+                        judge_client = GeminiInterface(api_key=judge_api_key)
                         judge_client.set_model(judge_model)
-                        evaluator = BiasEvaluator(api_key=judge_api_key, model=judge_model)
+                        evaluator = BiasEvaluator(judge_client)
                     except Exception as e:
                         st.error(f"Failed to initialize judge LLM: {str(e)}")
                         st.session_state.processing_active = False
@@ -312,7 +331,6 @@ class StreamlitMenu:
                         future_to_responder[future] = responder_type
                     
                     # Track completion while displaying progress
-                    import time
                     dot_cycle = 0
                     last_update = time.time()
                     dots_sequence = ["", ".", "..", "..."]
@@ -340,20 +358,27 @@ class StreamlitMenu:
                             
                             last_update = current_time
                         
-                        # Check if any futures are done
+                        # Collect finished futures. pop() so each one is only counted once -
+                        # as_completed() yields already-finished futures again on every call.
                         try:
-                            for future in as_completed(future_to_responder, timeout=0.1):
-                                responder_type = future_to_responder[future]
-                                results, fatal_error = future.result()
+                            for future in as_completed(list(future_to_responder), timeout=0.1):
+                                responder_type = future_to_responder.pop(future)
+                                try:
+                                    results, fatal_error = future.result()
+                                except Exception as e:
+                                    print(f"[{responder_type}] crashed: {e}")
+                                    results = []
                                 all_results.extend(results)
                                 completed_responders += 1
                                 responder_progress[responder_type]["current"] = total_prompts
-                        except:
+                        except FuturesTimeout:
                             pass
                         
                         time.sleep(0.05)
 
-                # Processing complete
+                # Processing complete - also save to disk so a refreshed tab loses nothing
+                if all_results:
+                    self.driver.export_results(all_results, f"results_{time.strftime('%Y%m%d_%H%M%S')}.tsv")
                 st.session_state.results = all_results
                 st.session_state.processing_active = False
                 st.session_state.processing_params = None

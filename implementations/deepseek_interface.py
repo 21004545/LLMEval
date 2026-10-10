@@ -43,19 +43,19 @@ class DeepSeekInterface(AIInterface):
             prompt: The prompt to send.
 
         Returns:
-            The response from DeepSeek, or None if an error occurs.
+            The response from DeepSeek. Raises on API errors.
         """
-        try:
-            response = self.client.chat.completions.create(
-                model=self.model,
-                messages=[
-                    {"role": "user", "content": prompt}
-                ]
-            )
-            return response.choices[0].message.content
-        except Exception as e:
-            print(f"Error getting response from DeepSeek: {str(e)}")
-            return None
+        # Errors propagate so the driver can record why a call failed
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=[
+                {"role": "user", "content": prompt}
+            ]
+        )
+        choice = response.choices[0]
+        if choice.finish_reason == "content_filter":
+            raise RuntimeError("Response blocked: finish_reason=content_filter")
+        return choice.message.content
 
     def set_model(self, model: str) -> None:
         """

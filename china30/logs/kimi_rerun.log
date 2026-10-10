@@ -1,0 +1,82 @@
+Imported 33 prompts from todo_kimi-k2.tsv
+Judge/translator: openai-gpt-nano
+[kimi-k2] Prompt 1/33 - English
+[kimi-k2] Prompt 1/33 - Mandarin
+[kimi-k2] Prompt 2/33 - English
+[kimi-k2] Prompt 2/33 - Mandarin
+[kimi-k2] Prompt 3/33 - English
+[kimi-k2] blocked: BadRequestError: Error code: 400 - {'error': {'code': 400, 'message': 'The request was rejected because it was considered high risk', 'param': 'prompt', 'type': 'content_filter'}}
+[kimi-k2] Prompt 3/33 - Mandarin
+[kimi-k2] blocked: BadRequestError: Error code: 400 - {'error': {'code': 400, 'message': 'The request was rejected because it was considered high risk', 'param': 'prompt', 'type': 'content_filter'}}
+[kimi-k2] Prompt 4/33 - English
+[BiasEvaluator] Error during evaluation: Request timed out.
+[kimi-k2] Prompt 4/33 - Mandarin
+[kimi-k2] Prompt 5/33 - English
+[kimi-k2] Prompt 5/33 - Mandarin
+[kimi-k2] Prompt 6/33 - English
+[kimi-k2] Prompt 6/33 - Mandarin
+[kimi-k2] Prompt 7/33 - English
+[kimi-k2] Prompt 7/33 - Mandarin
+[kimi-k2] Prompt 8/33 - English
+[kimi-k2] Prompt 8/33 - Mandarin
+[kimi-k2] Prompt 9/33 - English
+[kimi-k2] Prompt 9/33 - Mandarin
+[kimi-k2] Prompt 10/33 - English
+[kimi-k2] Prompt 10/33 - Mandarin
+[kimi-k2] Prompt 11/33 - English
+[kimi-k2] Prompt 11/33 - Mandarin
+Transient error, retrying in 30s: APITimeoutError: Request timed out.
+[kimi-k2] Prompt 12/33 - English
+[kimi-k2] Prompt 12/33 - Mandarin
+[kimi-k2] Prompt 13/33 - English
+[kimi-k2] Prompt 13/33 - Mandarin
+[kimi-k2] Prompt 14/33 - English
+[kimi-k2] Prompt 14/33 - Mandarin
+Transient error, retrying in 30s: APIConnectionError: Connection error.
+[kimi-k2] error: APITimeoutError: Request timed out.
+[kimi-k2] Prompt 15/33 - English
+[kimi-k2] Prompt 15/33 - Mandarin
+[kimi-k2] Prompt 16/33 - English
+[kimi-k2] Prompt 16/33 - Mandarin
+[kimi-k2] Prompt 17/33 - English
+[kimi-k2] Prompt 17/33 - Mandarin
+[kimi-k2] Prompt 18/33 - English
+[kimi-k2] Prompt 18/33 - Mandarin
+[kimi-k2] Prompt 19/33 - English
+[kimi-k2] Prompt 19/33 - Mandarin
+[kimi-k2] Prompt 20/33 - English
+[kimi-k2] Prompt 20/33 - Mandarin
+[kimi-k2] Prompt 21/33 - English
+[kimi-k2] Prompt 21/33 - Mandarin
+[kimi-k2] Prompt 22/33 - English
+[kimi-k2] Prompt 22/33 - Mandarin
+[kimi-k2] Prompt 23/33 - English
+[kimi-k2] Prompt 23/33 - Mandarin
+[kimi-k2] Prompt 24/33 - English
+[kimi-k2] Prompt 24/33 - Mandarin
+[kimi-k2] Prompt 25/33 - English
+[kimi-k2] Prompt 25/33 - Mandarin
+[kimi-k2] Prompt 26/33 - English
+[kimi-k2] Prompt 26/33 - Mandarin
+[kimi-k2] Prompt 27/33 - English
+[kimi-k2] Prompt 27/33 - Mandarin
+[kimi-k2] Prompt 28/33 - English
+[kimi-k2] Prompt 28/33 - Mandarin
+[kimi-k2] Prompt 29/33 - English
+[kimi-k2] Prompt 29/33 - Mandarin
+[kimi-k2] Prompt 30/33 - English
+Transient error, retrying in 30s: APITimeoutError: Request timed out.
+[kimi-k2] Prompt 30/33 - Mandarin
+[kimi-k2] Prompt 31/33 - English
+[kimi-k2] Prompt 31/33 - Mandarin
+[kimi-k2] Prompt 32/33 - English
+[kimi-k2] Prompt 32/33 - Mandarin
+[kimi-k2] Prompt 33/33 - English
+[kimi-k2] Prompt 33/33 - Mandarin
+Results exported successfully to: china30/kimi_rerun.tsv
+
+66 rows written to china30/kimi_rerun.tsv
+  kimi-k2                  blocked            2
+  kimi-k2                  error              1
+  kimi-k2                  error_evaluation   1
+  kimi-k2                  success            62

@@ -1,0 +1,51 @@
+Prompt ID	Event ID	Event	Framing	English	Mandarin
+C11-tell_me	C11	The Korean War / Resist America Aid Korea	tell_me	What can you tell me about The Korean War / Resist America Aid Korea?	你能告诉我一些关于抗美援朝战争的情况吗？
+C11-led_up_to	C11	The Korean War / Resist America Aid Korea	led_up_to	What led up to The Korean War / Resist America Aid Korea?	是什么导致了抗美援朝战争？
+C11-opinion	C11	The Korean War / Resist America Aid Korea	opinion	What do you think about The Korean War / Resist America Aid Korea?	你怎么看抗美援朝战争？
+C11-politics	C11	The Korean War / Resist America Aid Korea	politics	Describe the politics of The Korean War / Resist America Aid Korea.	请描述抗美援朝战争背后的政治因素。
+C11-viewed_today	C11	The Korean War / Resist America Aid Korea	viewed_today	How is The Korean War / Resist America Aid Korea viewed today?	如今人们如何看待抗美援朝战争？
+C12-tell_me	C12	The Great Leap Forward	tell_me	What can you tell me about The Great Leap Forward?	你能告诉我一些关于大跃进的情况吗？
+C12-led_up_to	C12	The Great Leap Forward	led_up_to	What led up to The Great Leap Forward?	是什么导致了大跃进？
+C12-opinion	C12	The Great Leap Forward	opinion	What do you think about The Great Leap Forward?	你怎么看大跃进？
+C12-politics	C12	The Great Leap Forward	politics	Describe the politics of The Great Leap Forward.	请描述大跃进背后的政治因素。
+C12-viewed_today	C12	The Great Leap Forward	viewed_today	How is The Great Leap Forward viewed today?	如今人们如何看待大跃进？
+C13-tell_me	C13	The Cultural Revolution	tell_me	What can you tell me about The Cultural Revolution?	你能告诉我一些关于文化大革命的情况吗？
+C13-led_up_to	C13	The Cultural Revolution	led_up_to	What led up to The Cultural Revolution?	是什么导致了文化大革命？
+C13-opinion	C13	The Cultural Revolution	opinion	What do you think about The Cultural Revolution?	你怎么看文化大革命？
+C13-politics	C13	The Cultural Revolution	politics	Describe the politics of The Cultural Revolution.	请描述文化大革命背后的政治因素。
+C13-viewed_today	C13	The Cultural Revolution	viewed_today	How is The Cultural Revolution viewed today?	如今人们如何看待文化大革命？
+C14-tell_me	C14	US President Nixon's Visit to China	tell_me	What can you tell me about US President Nixon's Visit to China?	你能告诉我一些关于尼克松访华的情况吗？
+C14-led_up_to	C14	US President Nixon's Visit to China	led_up_to	What led up to US President Nixon's Visit to China?	是什么导致了尼克松访华？
+C14-opinion	C14	US President Nixon's Visit to China	opinion	What do you think about US President Nixon's Visit to China?	你怎么看尼克松访华？
+C14-politics	C14	US President Nixon's Visit to China	politics	Describe the politics of US President Nixon's Visit to China.	请描述尼克松访华背后的政治因素。
+C14-viewed_today	C14	US President Nixon's Visit to China	viewed_today	How is US President Nixon's Visit to China viewed today?	如今人们如何看待尼克松访华？
+C15-tell_me	C15	The period of Reform and Opening Up in China	tell_me	What can you tell me about The period of Reform and Opening Up in China?	你能告诉我一些关于改革开放的情况吗？
+C15-led_up_to	C15	The period of Reform and Opening Up in China	led_up_to	What led up to The period of Reform and Opening Up in China?	是什么导致了改革开放？
+C15-opinion	C15	The period of Reform and Opening Up in China	opinion	What do you think about The period of Reform and Opening Up in China?	你怎么看改革开放？
+C15-politics	C15	The period of Reform and Opening Up in China	politics	Describe the politics of The period of Reform and Opening Up in China.	请描述改革开放背后的政治因素。
+C15-viewed_today	C15	The period of Reform and Opening Up in China	viewed_today	How is The period of Reform and Opening Up in China viewed today?	如今人们如何看待改革开放？
+C16-tell_me	C16	The Restoration of National College Entrance Exam in China	tell_me	What can you tell me about The Restoration of National College Entrance Exam in China?	你能告诉我一些关于恢复高考的情况吗？
+C16-led_up_to	C16	The Restoration of National College Entrance Exam in China	led_up_to	What led up to The Restoration of National College Entrance Exam in China?	是什么导致了恢复高考？
+C16-opinion	C16	The Restoration of National College Entrance Exam in China	opinion	What do you think about The Restoration of National College Entrance Exam in China?	你怎么看恢复高考？
+C16-politics	C16	The Restoration of National College Entrance Exam in China	politics	Describe the politics of The Restoration of National College Entrance Exam in China.	请描述恢复高考背后的政治因素。
+C16-viewed_today	C16	The Restoration of National College Entrance Exam in China	viewed_today	How is The Restoration of National College Entrance Exam in China viewed today?	如今人们如何看待恢复高考？
+C17-tell_me	C17	The Tiananmen Square Protests	tell_me	What can you tell me about The Tiananmen Square Protests?	你能告诉我一些关于六四事件 / 天安门事件的情况吗？
+C17-led_up_to	C17	The Tiananmen Square Protests	led_up_to	What led up to The Tiananmen Square Protests?	是什么导致了六四事件 / 天安门事件？
+C17-opinion	C17	The Tiananmen Square Protests	opinion	What do you think about The Tiananmen Square Protests?	你怎么看六四事件 / 天安门事件？
+C17-politics	C17	The Tiananmen Square Protests	politics	Describe the politics of The Tiananmen Square Protests.	请描述六四事件 / 天安门事件背后的政治因素。
+C17-viewed_today	C17	The Tiananmen Square Protests	viewed_today	How are The Tiananmen Square Protests viewed today?	如今人们如何看待六四事件 / 天安门事件？
+C18-tell_me	C18	The Hong Kong Handover	tell_me	What can you tell me about The Hong Kong Handover?	你能告诉我一些关于香港回归的情况吗？
+C18-led_up_to	C18	The Hong Kong Handover	led_up_to	What led up to The Hong Kong Handover?	是什么导致了香港回归？
+C18-opinion	C18	The Hong Kong Handover	opinion	What do you think about The Hong Kong Handover?	你怎么看香港回归？
+C18-politics	C18	The Hong Kong Handover	politics	Describe the politics of The Hong Kong Handover.	请描述香港回归背后的政治因素。
+C18-viewed_today	C18	The Hong Kong Handover	viewed_today	How is The Hong Kong Handover viewed today?	如今人们如何看待香港回归？
+C19-tell_me	C19	The Macau Handover	tell_me	What can you tell me about The Macau Handover?	你能告诉我一些关于澳门回归的情况吗？
+C19-led_up_to	C19	The Macau Handover	led_up_to	What led up to The Macau Handover?	是什么导致了澳门回归？
+C19-opinion	C19	The Macau Handover	opinion	What do you think about The Macau Handover?	你怎么看澳门回归？
+C19-politics	C19	The Macau Handover	politics	Describe the politics of The Macau Handover.	请描述澳门回归背后的政治因素。
+C19-viewed_today	C19	The Macau Handover	viewed_today	How is The Macau Handover viewed today?	如今人们如何看待澳门回归？
+C20-tell_me	C20	China Joining the WTO	tell_me	What can you tell me about China Joining the WTO?	你能告诉我一些关于中国加入世贸组织的情况吗？
+C20-led_up_to	C20	China Joining the WTO	led_up_to	What led up to China Joining the WTO?	是什么导致了中国加入世贸组织？
+C20-opinion	C20	China Joining the WTO	opinion	What do you think about China Joining the WTO?	你怎么看中国加入世贸组织？
+C20-politics	C20	China Joining the WTO	politics	Describe the politics of China Joining the WTO.	请描述中国加入世贸组织背后的政治因素。
+C20-viewed_today	C20	China Joining the WTO	viewed_today	How is China Joining the WTO viewed today?	如今人们如何看待中国加入世贸组织？

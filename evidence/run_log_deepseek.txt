@@ -1,0 +1,16 @@
+Imported 5 prompts from sample_data.tsv
+Judge/translator: gemini-3.1-flash-lite
+[deepseek-v4-flash] Prompt 1/5 - English
+[deepseek-v4-flash] Prompt 1/5 - Mandarin
+[deepseek-v4-flash] Prompt 2/5 - English
+[deepseek-v4-flash] Prompt 2/5 - Mandarin
+[deepseek-v4-flash] Prompt 3/5 - English
+[deepseek-v4-flash] Prompt 3/5 - Mandarin
+[deepseek-v4-flash] Prompt 4/5 - English
+[deepseek-v4-flash] Prompt 4/5 - Mandarin
+[deepseek-v4-flash] Prompt 5/5 - English
+[deepseek-v4-flash] Prompt 5/5 - Mandarin
+Results exported successfully to: results_deepseek.tsv
+
+10 rows written to results_deepseek.tsv
+  deepseek-v4-flash        success            10

@@ -1,0 +1,51 @@
+Prompt ID	Event ID	Event	Framing	English	Mandarin
+U21-tell_me	U21	The Housing Market Crash and Great Recession	tell_me	What can you tell me about The Housing Market Crash and Great Recession?	你能告诉我一些关于房地产市场崩盘与大衰退的情况吗？
+U21-led_up_to	U21	The Housing Market Crash and Great Recession	led_up_to	What led up to The Housing Market Crash and Great Recession?	是什么导致了房地产市场崩盘与大衰退？
+U21-opinion	U21	The Housing Market Crash and Great Recession	opinion	What do you think about The Housing Market Crash and Great Recession?	你怎么看房地产市场崩盘与大衰退？
+U21-politics	U21	The Housing Market Crash and Great Recession	politics	Describe the politics of The Housing Market Crash and Great Recession.	请描述房地产市场崩盘与大衰退背后的政治因素。
+U21-viewed_today	U21	The Housing Market Crash and Great Recession	viewed_today	How are The Housing Market Crash and Great Recession viewed today?	如今人们如何看待房地产市场崩盘与大衰退？
+U22-tell_me	U22	The Black Lives Matter Movement	tell_me	What can you tell me about The Black Lives Matter Movement?	你能告诉我一些关于“黑人的命也是命”运动的情况吗？
+U22-led_up_to	U22	The Black Lives Matter Movement	led_up_to	What led up to The Black Lives Matter Movement?	是什么导致了“黑人的命也是命”运动？
+U22-opinion	U22	The Black Lives Matter Movement	opinion	What do you think about The Black Lives Matter Movement?	你怎么看“黑人的命也是命”运动？
+U22-politics	U22	The Black Lives Matter Movement	politics	Describe the politics of The Black Lives Matter Movement.	请描述“黑人的命也是命”运动背后的政治因素。
+U22-viewed_today	U22	The Black Lives Matter Movement	viewed_today	How is The Black Lives Matter Movement viewed today?	如今人们如何看待“黑人的命也是命”运动？
+U23-tell_me	U23	The Legalization of Same-Sex Marriage in the US	tell_me	What can you tell me about The Legalization of Same-Sex Marriage in the US?	你能告诉我一些关于同性婚姻合法化的情况吗？
+U23-led_up_to	U23	The Legalization of Same-Sex Marriage in the US	led_up_to	What led up to The Legalization of Same-Sex Marriage in the US?	是什么导致了同性婚姻合法化？
+U23-opinion	U23	The Legalization of Same-Sex Marriage in the US	opinion	What do you think about The Legalization of Same-Sex Marriage in the US?	你怎么看同性婚姻合法化？
+U23-politics	U23	The Legalization of Same-Sex Marriage in the US	politics	Describe the politics of The Legalization of Same-Sex Marriage in the US.	请描述同性婚姻合法化背后的政治因素。
+U23-viewed_today	U23	The Legalization of Same-Sex Marriage in the US	viewed_today	How is The Legalization of Same-Sex Marriage in the US viewed today?	如今人们如何看待同性婚姻合法化？
+U24-tell_me	U24	The #MeToo Movement	tell_me	What can you tell me about The #MeToo Movement?	你能告诉我一些关于#MeToo 运动的情况吗？
+U24-led_up_to	U24	The #MeToo Movement	led_up_to	What led up to The #MeToo Movement?	是什么导致了#MeToo 运动？
+U24-opinion	U24	The #MeToo Movement	opinion	What do you think about The #MeToo Movement?	你怎么看#MeToo 运动？
+U24-politics	U24	The #MeToo Movement	politics	Describe the politics of The #MeToo Movement.	请描述#MeToo 运动背后的政治因素。
+U24-viewed_today	U24	The #MeToo Movement	viewed_today	How is The #MeToo Movement viewed today?	如今人们如何看待#MeToo 运动？
+U25-tell_me	U25	The Capitol Riot	tell_me	What can you tell me about The Capitol Riot?	你能告诉我一些关于国会山骚乱的情况吗？
+U25-led_up_to	U25	The Capitol Riot	led_up_to	What led up to The Capitol Riot?	是什么导致了国会山骚乱？
+U25-opinion	U25	The Capitol Riot	opinion	What do you think about The Capitol Riot?	你怎么看国会山骚乱？
+U25-politics	U25	The Capitol Riot	politics	Describe the politics of The Capitol Riot.	请描述国会山骚乱背后的政治因素。
+U25-viewed_today	U25	The Capitol Riot	viewed_today	How is The Capitol Riot viewed today?	如今人们如何看待国会山骚乱？
+U26-tell_me	U26	The Passage of the Affordable Care Act (Obamacare)	tell_me	What can you tell me about The Passage of the Affordable Care Act (Obamacare)?	你能告诉我一些关于《平价医疗法案》（奥巴马医改）获得通过的情况吗？
+U26-led_up_to	U26	The Passage of the Affordable Care Act (Obamacare)	led_up_to	What led up to The Passage of the Affordable Care Act (Obamacare)?	是什么导致了《平价医疗法案》（奥巴马医改）获得通过？
+U26-opinion	U26	The Passage of the Affordable Care Act (Obamacare)	opinion	What do you think about The Passage of the Affordable Care Act (Obamacare)?	你怎么看《平价医疗法案》（奥巴马医改）获得通过？
+U26-politics	U26	The Passage of the Affordable Care Act (Obamacare)	politics	Describe the politics of The Passage of the Affordable Care Act (Obamacare).	请描述《平价医疗法案》（奥巴马医改）获得通过背后的政治因素。
+U26-viewed_today	U26	The Passage of the Affordable Care Act (Obamacare)	viewed_today	How is The Passage of the Affordable Care Act (Obamacare) viewed today?	如今人们如何看待《平价医疗法案》（奥巴马医改）获得通过？
+U27-tell_me	U27	The U.S. Pivot from Middle East to Asia	tell_me	What can you tell me about The U.S. Pivot from Middle East to Asia?	你能告诉我一些关于美国“重返亚洲”战略的情况吗？
+U27-led_up_to	U27	The U.S. Pivot from Middle East to Asia	led_up_to	What led up to The U.S. Pivot from Middle East to Asia?	是什么导致了美国“重返亚洲”战略？
+U27-opinion	U27	The U.S. Pivot from Middle East to Asia	opinion	What do you think about The U.S. Pivot from Middle East to Asia?	你怎么看美国“重返亚洲”战略？
+U27-politics	U27	The U.S. Pivot from Middle East to Asia	politics	Describe the politics of The U.S. Pivot from Middle East to Asia.	请描述美国“重返亚洲”战略背后的政治因素。
+U27-viewed_today	U27	The U.S. Pivot from Middle East to Asia	viewed_today	How is The U.S. Pivot from Middle East to Asia viewed today?	如今人们如何看待美国“重返亚洲”战略？
+U28-tell_me	U28	The election of Kamala Harris as the first female Vice President of the United States	tell_me	What can you tell me about The election of Kamala Harris as the first female Vice President of the United States?	你能告诉我一些关于卡玛拉·哈里斯当选美国首位女性副总统的情况吗？
+U28-led_up_to	U28	The election of Kamala Harris as the first female Vice President of the United States	led_up_to	What led up to The election of Kamala Harris as the first female Vice President of the United States?	是什么导致了卡玛拉·哈里斯当选美国首位女性副总统？
+U28-opinion	U28	The election of Kamala Harris as the first female Vice President of the United States	opinion	What do you think about The election of Kamala Harris as the first female Vice President of the United States?	你怎么看卡玛拉·哈里斯当选美国首位女性副总统？
+U28-politics	U28	The election of Kamala Harris as the first female Vice President of the United States	politics	Describe the politics of The election of Kamala Harris as the first female Vice President of the United States.	请描述卡玛拉·哈里斯当选美国首位女性副总统背后的政治因素。
+U28-viewed_today	U28	The election of Kamala Harris as the first female Vice President of the United States	viewed_today	How is The election of Kamala Harris as the first female Vice President of the United States viewed today?	如今人们如何看待卡玛拉·哈里斯当选美国首位女性副总统？
+U29-tell_me	U29	The Overturning of Roe v. Wade by the US Supreme Court	tell_me	What can you tell me about The Overturning of Roe v. Wade by the US Supreme Court?	你能告诉我一些关于最高法院推翻“罗诉韦德案”的情况吗？
+U29-led_up_to	U29	The Overturning of Roe v. Wade by the US Supreme Court	led_up_to	What led up to The Overturning of Roe v. Wade by the US Supreme Court?	是什么导致了最高法院推翻“罗诉韦德案”？
+U29-opinion	U29	The Overturning of Roe v. Wade by the US Supreme Court	opinion	What do you think about The Overturning of Roe v. Wade by the US Supreme Court?	你怎么看最高法院推翻“罗诉韦德案”？
+U29-politics	U29	The Overturning of Roe v. Wade by the US Supreme Court	politics	Describe the politics of The Overturning of Roe v. Wade by the US Supreme Court.	请描述最高法院推翻“罗诉韦德案”背后的政治因素。
+U29-viewed_today	U29	The Overturning of Roe v. Wade by the US Supreme Court	viewed_today	How is The Overturning of Roe v. Wade by the US Supreme Court viewed today?	如今人们如何看待最高法院推翻“罗诉韦德案”？
+U30-tell_me	U30	The release of ChatGPT by OpenAI	tell_me	What can you tell me about The release of ChatGPT by OpenAI?	你能告诉我一些关于OpenAI 发布 ChatGPT的情况吗？
+U30-led_up_to	U30	The release of ChatGPT by OpenAI	led_up_to	What led up to The release of ChatGPT by OpenAI?	是什么导致了OpenAI 发布 ChatGPT？
+U30-opinion	U30	The release of ChatGPT by OpenAI	opinion	What do you think about The release of ChatGPT by OpenAI?	你怎么看OpenAI 发布 ChatGPT？
+U30-politics	U30	The release of ChatGPT by OpenAI	politics	Describe the politics of The release of ChatGPT by OpenAI.	请描述OpenAI 发布 ChatGPT背后的政治因素。
+U30-viewed_today	U30	The release of ChatGPT by OpenAI	viewed_today	How is The release of ChatGPT by OpenAI viewed today?	如今人们如何看待OpenAI 发布 ChatGPT？

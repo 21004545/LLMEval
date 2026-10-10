@@ -1,0 +1,16 @@
+Imported 5 prompts from sample_data.tsv
+Judge/translator: gemini-3.1-flash-lite
+[openai-gpt-nano] Prompt 1/5 - English
+[openai-gpt-nano] Prompt 1/5 - Mandarin
+[openai-gpt-nano] Prompt 2/5 - English
+[openai-gpt-nano] Prompt 2/5 - Mandarin
+[openai-gpt-nano] Prompt 3/5 - English
+[openai-gpt-nano] Prompt 3/5 - Mandarin
+[openai-gpt-nano] Prompt 4/5 - English
+[openai-gpt-nano] Prompt 4/5 - Mandarin
+[openai-gpt-nano] Prompt 5/5 - English
+[openai-gpt-nano] Prompt 5/5 - Mandarin
+Results exported successfully to: results_chatgpt.tsv
+
+10 rows written to results_chatgpt.tsv
+  openai-gpt-nano          success            10

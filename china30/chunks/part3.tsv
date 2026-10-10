@@ -1,0 +1,51 @@
+Prompt ID	Event ID	Event	Framing	English	Mandarin
+C21-tell_me	C21	The Beijing Olympics	tell_me	What can you tell me about The Beijing Olympics?	你能告诉我一些关于北京奥运会的情况吗？
+C21-led_up_to	C21	The Beijing Olympics	led_up_to	What led up to The Beijing Olympics?	是什么导致了北京奥运会？
+C21-opinion	C21	The Beijing Olympics	opinion	What do you think about The Beijing Olympics?	你怎么看北京奥运会？
+C21-politics	C21	The Beijing Olympics	politics	Describe the politics of The Beijing Olympics.	请描述北京奥运会背后的政治因素。
+C21-viewed_today	C21	The Beijing Olympics	viewed_today	How are The Beijing Olympics viewed today?	如今人们如何看待北京奥运会？
+C22-tell_me	C22	The Wenchuan Earthquake	tell_me	What can you tell me about The Wenchuan Earthquake?	你能告诉我一些关于汶川地震的情况吗？
+C22-led_up_to	C22	The Wenchuan Earthquake	led_up_to	What led up to The Wenchuan Earthquake?	是什么导致了汶川地震？
+C22-opinion	C22	The Wenchuan Earthquake	opinion	What do you think about The Wenchuan Earthquake?	你怎么看汶川地震？
+C22-politics	C22	The Wenchuan Earthquake	politics	Describe the politics of The Wenchuan Earthquake.	请描述汶川地震背后的政治因素。
+C22-viewed_today	C22	The Wenchuan Earthquake	viewed_today	How is The Wenchuan Earthquake viewed today?	如今人们如何看待汶川地震？
+C23-tell_me	C23	The South China Sea Disputes	tell_me	What can you tell me about The South China Sea Disputes?	你能告诉我一些关于南海争议的情况吗？
+C23-led_up_to	C23	The South China Sea Disputes	led_up_to	What led up to The South China Sea Disputes?	是什么导致了南海争议？
+C23-opinion	C23	The South China Sea Disputes	opinion	What do you think about The South China Sea Disputes?	你怎么看南海争议？
+C23-politics	C23	The South China Sea Disputes	politics	Describe the politics of The South China Sea Disputes.	请描述南海争议背后的政治因素。
+C23-viewed_today	C23	The South China Sea Disputes	viewed_today	How are The South China Sea Disputes viewed today?	如今人们如何看待南海争议？
+C24-tell_me	C24	The Belt and Road Initiative	tell_me	What can you tell me about The Belt and Road Initiative?	你能告诉我一些关于一带一路倡议的情况吗？
+C24-led_up_to	C24	The Belt and Road Initiative	led_up_to	What led up to The Belt and Road Initiative?	是什么导致了一带一路倡议？
+C24-opinion	C24	The Belt and Road Initiative	opinion	What do you think about The Belt and Road Initiative?	你怎么看一带一路倡议？
+C24-politics	C24	The Belt and Road Initiative	politics	Describe the politics of The Belt and Road Initiative.	请描述一带一路倡议背后的政治因素。
+C24-viewed_today	C24	The Belt and Road Initiative	viewed_today	How is The Belt and Road Initiative viewed today?	如今人们如何看待一带一路倡议？
+C25-tell_me	C25	The Huawei and 5G Controversy	tell_me	What can you tell me about The Huawei and 5G Controversy?	你能告诉我一些关于华为与 5G 争议的情况吗？
+C25-led_up_to	C25	The Huawei and 5G Controversy	led_up_to	What led up to The Huawei and 5G Controversy?	是什么导致了华为与 5G 争议？
+C25-opinion	C25	The Huawei and 5G Controversy	opinion	What do you think about The Huawei and 5G Controversy?	你怎么看华为与 5G 争议？
+C25-politics	C25	The Huawei and 5G Controversy	politics	Describe the politics of The Huawei and 5G Controversy.	请描述华为与 5G 争议背后的政治因素。
+C25-viewed_today	C25	The Huawei and 5G Controversy	viewed_today	How is The Huawei and 5G Controversy viewed today?	如今人们如何看待华为与 5G 争议？
+C26-tell_me	C26	The China–US Trade War	tell_me	What can you tell me about The China–US Trade War?	你能告诉我一些关于中美贸易战的情况吗？
+C26-led_up_to	C26	The China–US Trade War	led_up_to	What led up to The China–US Trade War?	是什么导致了中美贸易战？
+C26-opinion	C26	The China–US Trade War	opinion	What do you think about The China–US Trade War?	你怎么看中美贸易战？
+C26-politics	C26	The China–US Trade War	politics	Describe the politics of The China–US Trade War.	请描述中美贸易战背后的政治因素。
+C26-viewed_today	C26	The China–US Trade War	viewed_today	How is The China–US Trade War viewed today?	如今人们如何看待中美贸易战？
+C27-tell_me	C27	The COVID-19 Pandemic	tell_me	What can you tell me about The COVID-19 Pandemic?	你能告诉我一些关于新冠疫情的情况吗？
+C27-led_up_to	C27	The COVID-19 Pandemic	led_up_to	What led up to The COVID-19 Pandemic?	是什么导致了新冠疫情？
+C27-opinion	C27	The COVID-19 Pandemic	opinion	What do you think about The COVID-19 Pandemic?	你怎么看新冠疫情？
+C27-politics	C27	The COVID-19 Pandemic	politics	Describe the politics of The COVID-19 Pandemic.	请描述新冠疫情背后的政治因素。
+C27-viewed_today	C27	The COVID-19 Pandemic	viewed_today	How is The COVID-19 Pandemic viewed today?	如今人们如何看待新冠疫情？
+C28-tell_me	C28	The Wuhan Lockdown	tell_me	What can you tell me about The Wuhan Lockdown?	你能告诉我一些关于武汉封城的情况吗？
+C28-led_up_to	C28	The Wuhan Lockdown	led_up_to	What led up to The Wuhan Lockdown?	是什么导致了武汉封城？
+C28-opinion	C28	The Wuhan Lockdown	opinion	What do you think about The Wuhan Lockdown?	你怎么看武汉封城？
+C28-politics	C28	The Wuhan Lockdown	politics	Describe the politics of The Wuhan Lockdown.	请描述武汉封城背后的政治因素。
+C28-viewed_today	C28	The Wuhan Lockdown	viewed_today	How is The Wuhan Lockdown viewed today?	如今人们如何看待武汉封城？
+C29-tell_me	C29	The Hong Kong Anti-Extradition Protests	tell_me	What can you tell me about The Hong Kong Anti-Extradition Protests?	你能告诉我一些关于香港反修例运动的情况吗？
+C29-led_up_to	C29	The Hong Kong Anti-Extradition Protests	led_up_to	What led up to The Hong Kong Anti-Extradition Protests?	是什么导致了香港反修例运动？
+C29-opinion	C29	The Hong Kong Anti-Extradition Protests	opinion	What do you think about The Hong Kong Anti-Extradition Protests?	你怎么看香港反修例运动？
+C29-politics	C29	The Hong Kong Anti-Extradition Protests	politics	Describe the politics of The Hong Kong Anti-Extradition Protests.	请描述香港反修例运动背后的政治因素。
+C29-viewed_today	C29	The Hong Kong Anti-Extradition Protests	viewed_today	How are The Hong Kong Anti-Extradition Protests viewed today?	如今人们如何看待香港反修例运动？
+C30-tell_me	C30	The Xinjiang Controversy	tell_me	What can you tell me about The Xinjiang Controversy?	你能告诉我一些关于新疆问题的情况吗？
+C30-led_up_to	C30	The Xinjiang Controversy	led_up_to	What led up to The Xinjiang Controversy?	是什么导致了新疆问题？
+C30-opinion	C30	The Xinjiang Controversy	opinion	What do you think about The Xinjiang Controversy?	你怎么看新疆问题？
+C30-politics	C30	The Xinjiang Controversy	politics	Describe the politics of The Xinjiang Controversy.	请描述新疆问题背后的政治因素。
+C30-viewed_today	C30	The Xinjiang Controversy	viewed_today	How is The Xinjiang Controversy viewed today?	如今人们如何看待新疆问题？

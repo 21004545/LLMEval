@@ -1,0 +1,16 @@
+Imported 5 prompts from sample_data.tsv
+Judge/translator: gemini-3.1-flash-lite
+[gemini-3.1-flash-lite] Prompt 1/5 - English
+[gemini-3.1-flash-lite] Prompt 1/5 - Mandarin
+[gemini-3.1-flash-lite] Prompt 2/5 - English
+[gemini-3.1-flash-lite] Prompt 2/5 - Mandarin
+[gemini-3.1-flash-lite] Prompt 3/5 - English
+[gemini-3.1-flash-lite] Prompt 3/5 - Mandarin
+[gemini-3.1-flash-lite] Prompt 4/5 - English
+[gemini-3.1-flash-lite] Prompt 4/5 - Mandarin
+[gemini-3.1-flash-lite] Prompt 5/5 - English
+[gemini-3.1-flash-lite] Prompt 5/5 - Mandarin
+Results exported successfully to: results_gemini.tsv
+
+10 rows written to results_gemini.tsv
+  gemini-3.1-flash-lite    success            10

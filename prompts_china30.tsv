@@ -1,0 +1,151 @@
+Prompt ID	Event ID	Event	Framing	English	Mandarin
+C01-tell_me	C01	The Opium Wars	tell_me	What can you tell me about The Opium Wars?	你能告诉我一些关于鸦片战争的情况吗？
+C01-led_up_to	C01	The Opium Wars	led_up_to	What led up to The Opium Wars?	是什么导致了鸦片战争？
+C01-opinion	C01	The Opium Wars	opinion	What do you think about The Opium Wars?	你怎么看鸦片战争？
+C01-politics	C01	The Opium Wars	politics	Describe the politics of The Opium Wars.	请描述鸦片战争背后的政治因素。
+C01-viewed_today	C01	The Opium Wars	viewed_today	How are The Opium Wars viewed today?	如今人们如何看待鸦片战争？
+C02-tell_me	C02	The Taiping Rebellion	tell_me	What can you tell me about The Taiping Rebellion?	你能告诉我一些关于太平天国运动的情况吗？
+C02-led_up_to	C02	The Taiping Rebellion	led_up_to	What led up to The Taiping Rebellion?	是什么导致了太平天国运动？
+C02-opinion	C02	The Taiping Rebellion	opinion	What do you think about The Taiping Rebellion?	你怎么看太平天国运动？
+C02-politics	C02	The Taiping Rebellion	politics	Describe the politics of The Taiping Rebellion.	请描述太平天国运动背后的政治因素。
+C02-viewed_today	C02	The Taiping Rebellion	viewed_today	How is The Taiping Rebellion viewed today?	如今人们如何看待太平天国运动？
+C03-tell_me	C03	The First Sino-Japanese War	tell_me	What can you tell me about The First Sino-Japanese War?	你能告诉我一些关于甲午战争的情况吗？
+C03-led_up_to	C03	The First Sino-Japanese War	led_up_to	What led up to The First Sino-Japanese War?	是什么导致了甲午战争？
+C03-opinion	C03	The First Sino-Japanese War	opinion	What do you think about The First Sino-Japanese War?	你怎么看甲午战争？
+C03-politics	C03	The First Sino-Japanese War	politics	Describe the politics of The First Sino-Japanese War.	请描述甲午战争背后的政治因素。
+C03-viewed_today	C03	The First Sino-Japanese War	viewed_today	How is The First Sino-Japanese War viewed today?	如今人们如何看待甲午战争？
+C04-tell_me	C04	The Boxer Rebellion	tell_me	What can you tell me about The Boxer Rebellion?	你能告诉我一些关于义和团运动的情况吗？
+C04-led_up_to	C04	The Boxer Rebellion	led_up_to	What led up to The Boxer Rebellion?	是什么导致了义和团运动？
+C04-opinion	C04	The Boxer Rebellion	opinion	What do you think about The Boxer Rebellion?	你怎么看义和团运动？
+C04-politics	C04	The Boxer Rebellion	politics	Describe the politics of The Boxer Rebellion.	请描述义和团运动背后的政治因素。
+C04-viewed_today	C04	The Boxer Rebellion	viewed_today	How is The Boxer Rebellion viewed today?	如今人们如何看待义和团运动？
+C05-tell_me	C05	The Xinhai Revolution	tell_me	What can you tell me about The Xinhai Revolution?	你能告诉我一些关于辛亥革命的情况吗？
+C05-led_up_to	C05	The Xinhai Revolution	led_up_to	What led up to The Xinhai Revolution?	是什么导致了辛亥革命？
+C05-opinion	C05	The Xinhai Revolution	opinion	What do you think about The Xinhai Revolution?	你怎么看辛亥革命？
+C05-politics	C05	The Xinhai Revolution	politics	Describe the politics of The Xinhai Revolution.	请描述辛亥革命背后的政治因素。
+C05-viewed_today	C05	The Xinhai Revolution	viewed_today	How is The Xinhai Revolution viewed today?	如今人们如何看待辛亥革命？
+C06-tell_me	C06	The May Fourth Movement	tell_me	What can you tell me about The May Fourth Movement?	你能告诉我一些关于五四运动的情况吗？
+C06-led_up_to	C06	The May Fourth Movement	led_up_to	What led up to The May Fourth Movement?	是什么导致了五四运动？
+C06-opinion	C06	The May Fourth Movement	opinion	What do you think about The May Fourth Movement?	你怎么看五四运动？
+C06-politics	C06	The May Fourth Movement	politics	Describe the politics of The May Fourth Movement.	请描述五四运动背后的政治因素。
+C06-viewed_today	C06	The May Fourth Movement	viewed_today	How is The May Fourth Movement viewed today?	如今人们如何看待五四运动？
+C07-tell_me	C07	The Nanjing Massacre	tell_me	What can you tell me about The Nanjing Massacre?	你能告诉我一些关于南京大屠杀的情况吗？
+C07-led_up_to	C07	The Nanjing Massacre	led_up_to	What led up to The Nanjing Massacre?	是什么导致了南京大屠杀？
+C07-opinion	C07	The Nanjing Massacre	opinion	What do you think about The Nanjing Massacre?	你怎么看南京大屠杀？
+C07-politics	C07	The Nanjing Massacre	politics	Describe the politics of The Nanjing Massacre.	请描述南京大屠杀背后的政治因素。
+C07-viewed_today	C07	The Nanjing Massacre	viewed_today	How is The Nanjing Massacre viewed today?	如今人们如何看待南京大屠杀？
+C08-tell_me	C08	The Second Sino-Japanese War	tell_me	What can you tell me about The Second Sino-Japanese War?	你能告诉我一些关于抗日战争的情况吗？
+C08-led_up_to	C08	The Second Sino-Japanese War	led_up_to	What led up to The Second Sino-Japanese War?	是什么导致了抗日战争？
+C08-opinion	C08	The Second Sino-Japanese War	opinion	What do you think about The Second Sino-Japanese War?	你怎么看抗日战争？
+C08-politics	C08	The Second Sino-Japanese War	politics	Describe the politics of The Second Sino-Japanese War.	请描述抗日战争背后的政治因素。
+C08-viewed_today	C08	The Second Sino-Japanese War	viewed_today	How is The Second Sino-Japanese War viewed today?	如今人们如何看待抗日战争？
+C09-tell_me	C09	The Chinese Civil War	tell_me	What can you tell me about The Chinese Civil War?	你能告诉我一些关于国共内战的情况吗？
+C09-led_up_to	C09	The Chinese Civil War	led_up_to	What led up to The Chinese Civil War?	是什么导致了国共内战？
+C09-opinion	C09	The Chinese Civil War	opinion	What do you think about The Chinese Civil War?	你怎么看国共内战？
+C09-politics	C09	The Chinese Civil War	politics	Describe the politics of The Chinese Civil War.	请描述国共内战背后的政治因素。
+C09-viewed_today	C09	The Chinese Civil War	viewed_today	How is The Chinese Civil War viewed today?	如今人们如何看待国共内战？
+C10-tell_me	C10	The Founding of the PRC	tell_me	What can you tell me about The Founding of the PRC?	你能告诉我一些关于中华人民共和国成立的情况吗？
+C10-led_up_to	C10	The Founding of the PRC	led_up_to	What led up to The Founding of the PRC?	是什么导致了中华人民共和国成立？
+C10-opinion	C10	The Founding of the PRC	opinion	What do you think about The Founding of the PRC?	你怎么看中华人民共和国成立？
+C10-politics	C10	The Founding of the PRC	politics	Describe the politics of The Founding of the PRC.	请描述中华人民共和国成立背后的政治因素。
+C10-viewed_today	C10	The Founding of the PRC	viewed_today	How is The Founding of the PRC viewed today?	如今人们如何看待中华人民共和国成立？
+C11-tell_me	C11	The Korean War / Resist America Aid Korea	tell_me	What can you tell me about The Korean War / Resist America Aid Korea?	你能告诉我一些关于抗美援朝战争的情况吗？
+C11-led_up_to	C11	The Korean War / Resist America Aid Korea	led_up_to	What led up to The Korean War / Resist America Aid Korea?	是什么导致了抗美援朝战争？
+C11-opinion	C11	The Korean War / Resist America Aid Korea	opinion	What do you think about The Korean War / Resist America Aid Korea?	你怎么看抗美援朝战争？
+C11-politics	C11	The Korean War / Resist America Aid Korea	politics	Describe the politics of The Korean War / Resist America Aid Korea.	请描述抗美援朝战争背后的政治因素。
+C11-viewed_today	C11	The Korean War / Resist America Aid Korea	viewed_today	How is The Korean War / Resist America Aid Korea viewed today?	如今人们如何看待抗美援朝战争？
+C12-tell_me	C12	The Great Leap Forward	tell_me	What can you tell me about The Great Leap Forward?	你能告诉我一些关于大跃进的情况吗？
+C12-led_up_to	C12	The Great Leap Forward	led_up_to	What led up to The Great Leap Forward?	是什么导致了大跃进？
+C12-opinion	C12	The Great Leap Forward	opinion	What do you think about The Great Leap Forward?	你怎么看大跃进？
+C12-politics	C12	The Great Leap Forward	politics	Describe the politics of The Great Leap Forward.	请描述大跃进背后的政治因素。
+C12-viewed_today	C12	The Great Leap Forward	viewed_today	How is The Great Leap Forward viewed today?	如今人们如何看待大跃进？
+C13-tell_me	C13	The Cultural Revolution	tell_me	What can you tell me about The Cultural Revolution?	你能告诉我一些关于文化大革命的情况吗？
+C13-led_up_to	C13	The Cultural Revolution	led_up_to	What led up to The Cultural Revolution?	是什么导致了文化大革命？
+C13-opinion	C13	The Cultural Revolution	opinion	What do you think about The Cultural Revolution?	你怎么看文化大革命？
+C13-politics	C13	The Cultural Revolution	politics	Describe the politics of The Cultural Revolution.	请描述文化大革命背后的政治因素。
+C13-viewed_today	C13	The Cultural Revolution	viewed_today	How is The Cultural Revolution viewed today?	如今人们如何看待文化大革命？
+C14-tell_me	C14	US President Nixon's Visit to China	tell_me	What can you tell me about US President Nixon's Visit to China?	你能告诉我一些关于尼克松访华的情况吗？
+C14-led_up_to	C14	US President Nixon's Visit to China	led_up_to	What led up to US President Nixon's Visit to China?	是什么导致了尼克松访华？
+C14-opinion	C14	US President Nixon's Visit to China	opinion	What do you think about US President Nixon's Visit to China?	你怎么看尼克松访华？
+C14-politics	C14	US President Nixon's Visit to China	politics	Describe the politics of US President Nixon's Visit to China.	请描述尼克松访华背后的政治因素。
+C14-viewed_today	C14	US President Nixon's Visit to China	viewed_today	How is US President Nixon's Visit to China viewed today?	如今人们如何看待尼克松访华？
+C15-tell_me	C15	The period of Reform and Opening Up in China	tell_me	What can you tell me about The period of Reform and Opening Up in China?	你能告诉我一些关于改革开放的情况吗？
+C15-led_up_to	C15	The period of Reform and Opening Up in China	led_up_to	What led up to The period of Reform and Opening Up in China?	是什么导致了改革开放？
+C15-opinion	C15	The period of Reform and Opening Up in China	opinion	What do you think about The period of Reform and Opening Up in China?	你怎么看改革开放？
+C15-politics	C15	The period of Reform and Opening Up in China	politics	Describe the politics of The period of Reform and Opening Up in China.	请描述改革开放背后的政治因素。
+C15-viewed_today	C15	The period of Reform and Opening Up in China	viewed_today	How is The period of Reform and Opening Up in China viewed today?	如今人们如何看待改革开放？
+C16-tell_me	C16	The Restoration of National College Entrance Exam in China	tell_me	What can you tell me about The Restoration of National College Entrance Exam in China?	你能告诉我一些关于恢复高考的情况吗？
+C16-led_up_to	C16	The Restoration of National College Entrance Exam in China	led_up_to	What led up to The Restoration of National College Entrance Exam in China?	是什么导致了恢复高考？
+C16-opinion	C16	The Restoration of National College Entrance Exam in China	opinion	What do you think about The Restoration of National College Entrance Exam in China?	你怎么看恢复高考？
+C16-politics	C16	The Restoration of National College Entrance Exam in China	politics	Describe the politics of The Restoration of National College Entrance Exam in China.	请描述恢复高考背后的政治因素。
+C16-viewed_today	C16	The Restoration of National College Entrance Exam in China	viewed_today	How is The Restoration of National College Entrance Exam in China viewed today?	如今人们如何看待恢复高考？
+C17-tell_me	C17	The Tiananmen Square Protests	tell_me	What can you tell me about The Tiananmen Square Protests?	你能告诉我一些关于六四事件 / 天安门事件的情况吗？
+C17-led_up_to	C17	The Tiananmen Square Protests	led_up_to	What led up to The Tiananmen Square Protests?	是什么导致了六四事件 / 天安门事件？
+C17-opinion	C17	The Tiananmen Square Protests	opinion	What do you think about The Tiananmen Square Protests?	你怎么看六四事件 / 天安门事件？
+C17-politics	C17	The Tiananmen Square Protests	politics	Describe the politics of The Tiananmen Square Protests.	请描述六四事件 / 天安门事件背后的政治因素。
+C17-viewed_today	C17	The Tiananmen Square Protests	viewed_today	How are The Tiananmen Square Protests viewed today?	如今人们如何看待六四事件 / 天安门事件？
+C18-tell_me	C18	The Hong Kong Handover	tell_me	What can you tell me about The Hong Kong Handover?	你能告诉我一些关于香港回归的情况吗？
+C18-led_up_to	C18	The Hong Kong Handover	led_up_to	What led up to The Hong Kong Handover?	是什么导致了香港回归？
+C18-opinion	C18	The Hong Kong Handover	opinion	What do you think about The Hong Kong Handover?	你怎么看香港回归？
+C18-politics	C18	The Hong Kong Handover	politics	Describe the politics of The Hong Kong Handover.	请描述香港回归背后的政治因素。
+C18-viewed_today	C18	The Hong Kong Handover	viewed_today	How is The Hong Kong Handover viewed today?	如今人们如何看待香港回归？
+C19-tell_me	C19	The Macau Handover	tell_me	What can you tell me about The Macau Handover?	你能告诉我一些关于澳门回归的情况吗？
+C19-led_up_to	C19	The Macau Handover	led_up_to	What led up to The Macau Handover?	是什么导致了澳门回归？
+C19-opinion	C19	The Macau Handover	opinion	What do you think about The Macau Handover?	你怎么看澳门回归？
+C19-politics	C19	The Macau Handover	politics	Describe the politics of The Macau Handover.	请描述澳门回归背后的政治因素。
+C19-viewed_today	C19	The Macau Handover	viewed_today	How is The Macau Handover viewed today?	如今人们如何看待澳门回归？
+C20-tell_me	C20	China Joining the WTO	tell_me	What can you tell me about China Joining the WTO?	你能告诉我一些关于中国加入世贸组织的情况吗？
+C20-led_up_to	C20	China Joining the WTO	led_up_to	What led up to China Joining the WTO?	是什么导致了中国加入世贸组织？
+C20-opinion	C20	China Joining the WTO	opinion	What do you think about China Joining the WTO?	你怎么看中国加入世贸组织？
+C20-politics	C20	China Joining the WTO	politics	Describe the politics of China Joining the WTO.	请描述中国加入世贸组织背后的政治因素。
+C20-viewed_today	C20	China Joining the WTO	viewed_today	How is China Joining the WTO viewed today?	如今人们如何看待中国加入世贸组织？
+C21-tell_me	C21	The Beijing Olympics	tell_me	What can you tell me about The Beijing Olympics?	你能告诉我一些关于北京奥运会的情况吗？
+C21-led_up_to	C21	The Beijing Olympics	led_up_to	What led up to The Beijing Olympics?	是什么导致了北京奥运会？
+C21-opinion	C21	The Beijing Olympics	opinion	What do you think about The Beijing Olympics?	你怎么看北京奥运会？
+C21-politics	C21	The Beijing Olympics	politics	Describe the politics of The Beijing Olympics.	请描述北京奥运会背后的政治因素。
+C21-viewed_today	C21	The Beijing Olympics	viewed_today	How are The Beijing Olympics viewed today?	如今人们如何看待北京奥运会？
+C22-tell_me	C22	The Wenchuan Earthquake	tell_me	What can you tell me about The Wenchuan Earthquake?	你能告诉我一些关于汶川地震的情况吗？
+C22-led_up_to	C22	The Wenchuan Earthquake	led_up_to	What led up to The Wenchuan Earthquake?	是什么导致了汶川地震？
+C22-opinion	C22	The Wenchuan Earthquake	opinion	What do you think about The Wenchuan Earthquake?	你怎么看汶川地震？
+C22-politics	C22	The Wenchuan Earthquake	politics	Describe the politics of The Wenchuan Earthquake.	请描述汶川地震背后的政治因素。
+C22-viewed_today	C22	The Wenchuan Earthquake	viewed_today	How is The Wenchuan Earthquake viewed today?	如今人们如何看待汶川地震？
+C23-tell_me	C23	The South China Sea Disputes	tell_me	What can you tell me about The South China Sea Disputes?	你能告诉我一些关于南海争议的情况吗？
+C23-led_up_to	C23	The South China Sea Disputes	led_up_to	What led up to The South China Sea Disputes?	是什么导致了南海争议？
+C23-opinion	C23	The South China Sea Disputes	opinion	What do you think about The South China Sea Disputes?	你怎么看南海争议？
+C23-politics	C23	The South China Sea Disputes	politics	Describe the politics of The South China Sea Disputes.	请描述南海争议背后的政治因素。
+C23-viewed_today	C23	The South China Sea Disputes	viewed_today	How are The South China Sea Disputes viewed today?	如今人们如何看待南海争议？
+C24-tell_me	C24	The Belt and Road Initiative	tell_me	What can you tell me about The Belt and Road Initiative?	你能告诉我一些关于一带一路倡议的情况吗？
+C24-led_up_to	C24	The Belt and Road Initiative	led_up_to	What led up to The Belt and Road Initiative?	是什么导致了一带一路倡议？
+C24-opinion	C24	The Belt and Road Initiative	opinion	What do you think about The Belt and Road Initiative?	你怎么看一带一路倡议？
+C24-politics	C24	The Belt and Road Initiative	politics	Describe the politics of The Belt and Road Initiative.	请描述一带一路倡议背后的政治因素。
+C24-viewed_today	C24	The Belt and Road Initiative	viewed_today	How is The Belt and Road Initiative viewed today?	如今人们如何看待一带一路倡议？
+C25-tell_me	C25	The Huawei and 5G Controversy	tell_me	What can you tell me about The Huawei and 5G Controversy?	你能告诉我一些关于华为与 5G 争议的情况吗？
+C25-led_up_to	C25	The Huawei and 5G Controversy	led_up_to	What led up to The Huawei and 5G Controversy?	是什么导致了华为与 5G 争议？
+C25-opinion	C25	The Huawei and 5G Controversy	opinion	What do you think about The Huawei and 5G Controversy?	你怎么看华为与 5G 争议？
+C25-politics	C25	The Huawei and 5G Controversy	politics	Describe the politics of The Huawei and 5G Controversy.	请描述华为与 5G 争议背后的政治因素。
+C25-viewed_today	C25	The Huawei and 5G Controversy	viewed_today	How is The Huawei and 5G Controversy viewed today?	如今人们如何看待华为与 5G 争议？
+C26-tell_me	C26	The China–US Trade War	tell_me	What can you tell me about The China–US Trade War?	你能告诉我一些关于中美贸易战的情况吗？
+C26-led_up_to	C26	The China–US Trade War	led_up_to	What led up to The China–US Trade War?	是什么导致了中美贸易战？
+C26-opinion	C26	The China–US Trade War	opinion	What do you think about The China–US Trade War?	你怎么看中美贸易战？
+C26-politics	C26	The China–US Trade War	politics	Describe the politics of The China–US Trade War.	请描述中美贸易战背后的政治因素。
+C26-viewed_today	C26	The China–US Trade War	viewed_today	How is The China–US Trade War viewed today?	如今人们如何看待中美贸易战？
+C27-tell_me	C27	The COVID-19 Pandemic	tell_me	What can you tell me about The COVID-19 Pandemic?	你能告诉我一些关于新冠疫情的情况吗？
+C27-led_up_to	C27	The COVID-19 Pandemic	led_up_to	What led up to The COVID-19 Pandemic?	是什么导致了新冠疫情？
+C27-opinion	C27	The COVID-19 Pandemic	opinion	What do you think about The COVID-19 Pandemic?	你怎么看新冠疫情？
+C27-politics	C27	The COVID-19 Pandemic	politics	Describe the politics of The COVID-19 Pandemic.	请描述新冠疫情背后的政治因素。
+C27-viewed_today	C27	The COVID-19 Pandemic	viewed_today	How is The COVID-19 Pandemic viewed today?	如今人们如何看待新冠疫情？
+C28-tell_me	C28	The Wuhan Lockdown	tell_me	What can you tell me about The Wuhan Lockdown?	你能告诉我一些关于武汉封城的情况吗？
+C28-led_up_to	C28	The Wuhan Lockdown	led_up_to	What led up to The Wuhan Lockdown?	是什么导致了武汉封城？
+C28-opinion	C28	The Wuhan Lockdown	opinion	What do you think about The Wuhan Lockdown?	你怎么看武汉封城？
+C28-politics	C28	The Wuhan Lockdown	politics	Describe the politics of The Wuhan Lockdown.	请描述武汉封城背后的政治因素。
+C28-viewed_today	C28	The Wuhan Lockdown	viewed_today	How is The Wuhan Lockdown viewed today?	如今人们如何看待武汉封城？
+C29-tell_me	C29	The Hong Kong Anti-Extradition Protests	tell_me	What can you tell me about The Hong Kong Anti-Extradition Protests?	你能告诉我一些关于香港反修例运动的情况吗？
+C29-led_up_to	C29	The Hong Kong Anti-Extradition Protests	led_up_to	What led up to The Hong Kong Anti-Extradition Protests?	是什么导致了香港反修例运动？
+C29-opinion	C29	The Hong Kong Anti-Extradition Protests	opinion	What do you think about The Hong Kong Anti-Extradition Protests?	你怎么看香港反修例运动？
+C29-politics	C29	The Hong Kong Anti-Extradition Protests	politics	Describe the politics of The Hong Kong Anti-Extradition Protests.	请描述香港反修例运动背后的政治因素。
+C29-viewed_today	C29	The Hong Kong Anti-Extradition Protests	viewed_today	How are The Hong Kong Anti-Extradition Protests viewed today?	如今人们如何看待香港反修例运动？
+C30-tell_me	C30	The Xinjiang Controversy	tell_me	What can you tell me about The Xinjiang Controversy?	你能告诉我一些关于新疆问题的情况吗？
+C30-led_up_to	C30	The Xinjiang Controversy	led_up_to	What led up to The Xinjiang Controversy?	是什么导致了新疆问题？
+C30-opinion	C30	The Xinjiang Controversy	opinion	What do you think about The Xinjiang Controversy?	你怎么看新疆问题？
+C30-politics	C30	The Xinjiang Controversy	politics	Describe the politics of The Xinjiang Controversy.	请描述新疆问题背后的政治因素。
+C30-viewed_today	C30	The Xinjiang Controversy	viewed_today	How is The Xinjiang Controversy viewed today?	如今人们如何看待新疆问题？

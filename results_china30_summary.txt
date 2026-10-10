@@ -1,0 +1,31 @@
+1200 completed rows
+
+RQ1/RQ4 - restriction by model and language
+                                              n    hard    soft   total   mean bias (scored rows)
+  deepseek-v4-flash / English               150    0.0%    9.3%    9.3%   2.09
+  deepseek-v4-flash / Mandarin              150    0.7%   27.3%   28.0%   2.40
+  gemini-3.1-flash-lite / English           150    0.0%    0.0%    0.0%   2.78
+  gemini-3.1-flash-lite / Mandarin          150    0.0%    0.0%    0.0%   2.77
+  kimi-k2 / English                         150    3.3%    4.0%    7.3%   2.92
+  kimi-k2 / Mandarin                        150    3.3%    8.0%   11.3%   3.56
+  openai-gpt-nano / English                 150    0.0%    0.0%    0.0%   2.04
+  openai-gpt-nano / Mandarin                150    0.0%    0.7%    0.7%   2.15
+
+RQ4 - US vs Chinese models x prompt language
+                                              n    hard    soft   total   mean bias (scored rows)
+  CN model / English prompt                 300    1.7%    6.7%    8.3%   2.50
+  CN model / Mandarin prompt                300    2.0%   17.7%   19.7%   2.97
+  US model / English prompt                 300    0.0%    0.0%    0.0%   2.41
+  US model / Mandarin prompt                300    0.0%    0.3%    0.3%   2.46
+
+RQ3 - restriction by prompt framing
+                                              n    hard    soft   total   mean bias (scored rows)
+  led_up_to                                 240    0.8%    6.2%    7.1%   2.36
+  opinion                                   240    1.2%    7.1%    8.3%   2.53
+  politics                                  240    0.8%    7.1%    7.9%   2.78
+  tell_me                                   240    0.8%    5.4%    6.2%   2.42
+  viewed_today                              240    0.8%    5.0%    5.8%   2.82
+
+Events with restrictions (hard+soft out of 5 framings), CN models then US models
+                                                       openai-En openai-Ma gemini-En gemini-Ma deepse-En deepse-Ma   kimi-En   kimi-Ma
+  C03 The First 

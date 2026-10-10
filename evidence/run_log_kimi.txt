@@ -1,0 +1,16 @@
+Imported 5 prompts from sample_data.tsv
+Judge/translator: gemini-3.1-flash-lite
+[kimi-k2] Prompt 1/5 - English
+[kimi-k2] Prompt 1/5 - Mandarin
+[kimi-k2] Prompt 2/5 - English
+[kimi-k2] Prompt 2/5 - Mandarin
+[kimi-k2] Prompt 3/5 - English
+[kimi-k2] Prompt 3/5 - Mandarin
+[kimi-k2] Prompt 4/5 - English
+[kimi-k2] Prompt 4/5 - Mandarin
+[kimi-k2] Prompt 5/5 - English
+[kimi-k2] Prompt 5/5 - Mandarin
+Results exported successfully to: results_kimi.tsv
+
+10 rows written to results_kimi.tsv
+  kimi-k2                  success            10

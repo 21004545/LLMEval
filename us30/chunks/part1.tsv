@@ -1,0 +1,51 @@
+Prompt ID	Event ID	Event	Framing	English	Mandarin
+U01-tell_me	U01	The 'Empress of China' visit to Guangzhou	tell_me	What can you tell me about The 'Empress of China' visit to Guangzhou?	你能告诉我一些关于“中国皇后号”商船抵达广州的情况吗？
+U01-led_up_to	U01	The 'Empress of China' visit to Guangzhou	led_up_to	What led up to The 'Empress of China' visit to Guangzhou?	是什么导致了“中国皇后号”商船抵达广州？
+U01-opinion	U01	The 'Empress of China' visit to Guangzhou	opinion	What do you think about The 'Empress of China' visit to Guangzhou?	你怎么看“中国皇后号”商船抵达广州？
+U01-politics	U01	The 'Empress of China' visit to Guangzhou	politics	Describe the politics of The 'Empress of China' visit to Guangzhou.	请描述“中国皇后号”商船抵达广州背后的政治因素。
+U01-viewed_today	U01	The 'Empress of China' visit to Guangzhou	viewed_today	How is The 'Empress of China' visit to Guangzhou viewed today?	如今人们如何看待“中国皇后号”商船抵达广州？
+U02-tell_me	U02	The Burlingame Mission	tell_me	What can you tell me about The Burlingame Mission?	你能告诉我一些关于蒲安臣使团的情况吗？
+U02-led_up_to	U02	The Burlingame Mission	led_up_to	What led up to The Burlingame Mission?	是什么导致了蒲安臣使团？
+U02-opinion	U02	The Burlingame Mission	opinion	What do you think about The Burlingame Mission?	你怎么看蒲安臣使团？
+U02-politics	U02	The Burlingame Mission	politics	Describe the politics of The Burlingame Mission.	请描述蒲安臣使团背后的政治因素。
+U02-viewed_today	U02	The Burlingame Mission	viewed_today	How is The Burlingame Mission viewed today?	如今人们如何看待蒲安臣使团？
+U03-tell_me	U03	The Chinese Educational Mission	tell_me	What can you tell me about The Chinese Educational Mission?	你能告诉我一些关于中国幼童留美教育计划 / 清政府幼童赴美留学计划的情况吗？
+U03-led_up_to	U03	The Chinese Educational Mission	led_up_to	What led up to The Chinese Educational Mission?	是什么导致了中国幼童留美教育计划 / 清政府幼童赴美留学计划？
+U03-opinion	U03	The Chinese Educational Mission	opinion	What do you think about The Chinese Educational Mission?	你怎么看中国幼童留美教育计划 / 清政府幼童赴美留学计划？
+U03-politics	U03	The Chinese Educational Mission	politics	Describe the politics of The Chinese Educational Mission.	请描述中国幼童留美教育计划 / 清政府幼童赴美留学计划背后的政治因素。
+U03-viewed_today	U03	The Chinese Educational Mission	viewed_today	How is The Chinese Educational Mission viewed today?	如今人们如何看待中国幼童留美教育计划 / 清政府幼童赴美留学计划？
+U04-tell_me	U04	The California Gold Rush	tell_me	What can you tell me about The California Gold Rush?	你能告诉我一些关于加利福尼亚淘金热的情况吗？
+U04-led_up_to	U04	The California Gold Rush	led_up_to	What led up to The California Gold Rush?	是什么导致了加利福尼亚淘金热？
+U04-opinion	U04	The California Gold Rush	opinion	What do you think about The California Gold Rush?	你怎么看加利福尼亚淘金热？
+U04-politics	U04	The California Gold Rush	politics	Describe the politics of The California Gold Rush.	请描述加利福尼亚淘金热背后的政治因素。
+U04-viewed_today	U04	The California Gold Rush	viewed_today	How is The California Gold Rush viewed today?	如今人们如何看待加利福尼亚淘金热？
+U05-tell_me	U05	The Boycott of American Goods in China	tell_me	What can you tell me about The Boycott of American Goods in China?	你能告诉我一些关于中国抵制美货运动的情况吗？
+U05-led_up_to	U05	The Boycott of American Goods in China	led_up_to	What led up to The Boycott of American Goods in China?	是什么导致了中国抵制美货运动？
+U05-opinion	U05	The Boycott of American Goods in China	opinion	What do you think about The Boycott of American Goods in China?	你怎么看中国抵制美货运动？
+U05-politics	U05	The Boycott of American Goods in China	politics	Describe the politics of The Boycott of American Goods in China.	请描述中国抵制美货运动背后的政治因素。
+U05-viewed_today	U05	The Boycott of American Goods in China	viewed_today	How is The Boycott of American Goods in China viewed today?	如今人们如何看待中国抵制美货运动？
+U06-tell_me	U06	China's Declaration of War on Germany and Austria-Hungary	tell_me	What can you tell me about China's Declaration of War on Germany and Austria-Hungary?	你能告诉我一些关于中国对德、奥宣战（参与第一次世界大战）的情况吗？
+U06-led_up_to	U06	China's Declaration of War on Germany and Austria-Hungary	led_up_to	What led up to China's Declaration of War on Germany and Austria-Hungary?	是什么导致了中国对德、奥宣战（参与第一次世界大战）？
+U06-opinion	U06	China's Declaration of War on Germany and Austria-Hungary	opinion	What do you think about China's Declaration of War on Germany and Austria-Hungary?	你怎么看中国对德、奥宣战（参与第一次世界大战）？
+U06-politics	U06	China's Declaration of War on Germany and Austria-Hungary	politics	Describe the politics of China's Declaration of War on Germany and Austria-Hungary.	请描述中国对德、奥宣战（参与第一次世界大战）背后的政治因素。
+U06-viewed_today	U06	China's Declaration of War on Germany and Austria-Hungary	viewed_today	How is China's Declaration of War on Germany and Austria-Hungary viewed today?	如今人们如何看待中国对德、奥宣战（参与第一次世界大战）？
+U07-tell_me	U07	The Attack on Pearl Harbor	tell_me	What can you tell me about The Attack on Pearl Harbor?	你能告诉我一些关于珍珠港事件的情况吗？
+U07-led_up_to	U07	The Attack on Pearl Harbor	led_up_to	What led up to The Attack on Pearl Harbor?	是什么导致了珍珠港事件？
+U07-opinion	U07	The Attack on Pearl Harbor	opinion	What do you think about The Attack on Pearl Harbor?	你怎么看珍珠港事件？
+U07-politics	U07	The Attack on Pearl Harbor	politics	Describe the politics of The Attack on Pearl Harbor.	请描述珍珠港事件背后的政治因素。
+U07-viewed_today	U07	The Attack on Pearl Harbor	viewed_today	How is The Attack on Pearl Harbor viewed today?	如今人们如何看待珍珠港事件？
+U08-tell_me	U08	US War Aid to China during World War II	tell_me	What can you tell me about US War Aid to China during World War II?	你能告诉我一些关于美国对华战时援助的情况吗？
+U08-led_up_to	U08	US War Aid to China during World War II	led_up_to	What led up to US War Aid to China during World War II?	是什么导致了美国对华战时援助？
+U08-opinion	U08	US War Aid to China during World War II	opinion	What do you think about US War Aid to China during World War II?	你怎么看美国对华战时援助？
+U08-politics	U08	US War Aid to China during World War II	politics	Describe the politics of US War Aid to China during World War II.	请描述美国对华战时援助背后的政治因素。
+U08-viewed_today	U08	US War Aid to China during World War II	viewed_today	How is US War Aid to China during World War II viewed today?	如今人们如何看待美国对华战时援助？
+U09-tell_me	U09	The Manhattan Project	tell_me	What can you tell me about The Manhattan Project?	你能告诉我一些关于曼哈顿计划的情况吗？
+U09-led_up_to	U09	The Manhattan Project	led_up_to	What led up to The Manhattan Project?	是什么导致了曼哈顿计划？
+U09-opinion	U09	The Manhattan Project	opinion	What do you think about The Manhattan Project?	你怎么看曼哈顿计划？
+U09-politics	U09	The Manhattan Project	politics	Describe the politics of The Manhattan Project.	请描述曼哈顿计划背后的政治因素。
+U09-viewed_today	U09	The Manhattan Project	viewed_today	How is The Manhattan Project viewed today?	如今人们如何看待曼哈顿计划？
+U10-tell_me	U10	The First Taiwan Strait Crisis	tell_me	What can you tell me about The First Taiwan Strait Crisis?	你能告诉我一些关于第一次台湾海峡危机的情况吗？
+U10-led_up_to	U10	The First Taiwan Strait Crisis	led_up_to	What led up to The First Taiwan Strait Crisis?	是什么导致了第一次台湾海峡危机？
+U10-opinion	U10	The First Taiwan Strait Crisis	opinion	What do you think about The First Taiwan Strait Crisis?	你怎么看第一次台湾海峡危机？
+U10-politics	U10	The First Taiwan Strait Crisis	politics	Describe the politics of The First Taiwan Strait Crisis.	请描述第一次台湾海峡危机背后的政治因素。
+U10-viewed_today	U10	The First Taiwan Strait Crisis	viewed_today	How is The First Taiwan Strait Crisis viewed today?	如今人们如何看待第一次台湾海峡危机？

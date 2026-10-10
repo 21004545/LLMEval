@@ -1,0 +1,42 @@
+Imported 5 prompts from sample_data.tsv
+[openai-gpt-nano] Prompt 1/5 - English
+[openai-gpt-nano] error_fatal: RateLimitError: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+Stopping openai-gpt-nano due to fatal error at prompt 1
+WARNING: openai-gpt-nano stopped early on a fatal error - check the 'error' column
+[gemini-3.1-flash-lite] Prompt 1/5 - English
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+[BiasEvaluator] Starting evaluation with model: gpt-5.4-nano
+[BiasEvaluator] Calling OpenAI API (model=gpt-5.4-nano)...
+[BiasEvaluator] Error during evaluation: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+[gemini-3.1-flash-lite] Prompt 1/5 - Mandarin
+[gemini-3.1-flash-lite] Prompt 2/5 - English
+[BiasEvaluator] Starting evaluation with model: gpt-5.4-nano
+[BiasEvaluator] Calling OpenAI API (model=gpt-5.4-nano)...
+[BiasEvaluator] Error during evaluation: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+[gemini-3.1-flash-lite] Prompt 2/5 - Mandarin
+[gemini-3.1-flash-lite] Prompt 3/5 - English
+[BiasEvaluator] Starting evaluation with model: gpt-5.4-nano
+[BiasEvaluator] Calling OpenAI API (model=gpt-5.4-nano)...
+[BiasEvaluator] Error during evaluation: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+[gemini-3.1-flash-lite] Prompt 3/5 - Mandarin
+[gemini-3.1-flash-lite] Prompt 4/5 - English
+[BiasEvaluator] Starting evaluation with model: gpt-5.4-nano
+[BiasEvaluator] Calling OpenAI API (model=gpt-5.4-nano)...
+[BiasEvaluator] Error during evaluation: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+[gemini-3.1-flash-lite] Prompt 4/5 - Mandarin
+[gemini-3.1-flash-lite] Prompt 5/5 - English
+[BiasEvaluator] Starting evaluation with model: gpt-5.4-nano
+[BiasEvaluator] Calling OpenAI API (model=gpt-5.4-nano)...
+[BiasEvaluator] Error during evaluation: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+[gemini-3.1-flash-lite] Prompt 5/5 - Mandarin
+[deepseek-v4-flash] Prompt 1/5 - English
+[deepseek-v4-flash] error_fatal: APIStatusError: Error code: 402 - {'error': {'message': 'Insufficient Balance (request_id: 7e36f036-8b26-402e-bf6a-0f0d19ac756f)', 'type': 'unknown_error', 'param': None, 'code': 'invalid_request_error'}}
+Stopping deepseek-v4-flash due to fatal error at prompt 1
+WARNING: deepseek-v4-flash stopped early on a fatal error - check the 'error' column
+Results exported successfully to: results_3models.tsv
+
+12 rows written to results_3models.tsv
+  deepseek-v4-flash        error_fatal        1
+  gemini-3.1-flash-lite    error_evaluation   5
+  gemini-3.1-flash-lite    error_translation  5
+  openai-gpt-nano          error_fatal        1

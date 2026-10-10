@@ -1,0 +1,51 @@
+Prompt ID	Event ID	Event	Framing	English	Mandarin
+U11-tell_me	U11	The Passage of US Civil Rights Act	tell_me	What can you tell me about The Passage of US Civil Rights Act?	你能告诉我一些关于美国《民权法案》的通过的情况吗？
+U11-led_up_to	U11	The Passage of US Civil Rights Act	led_up_to	What led up to The Passage of US Civil Rights Act?	是什么导致了美国《民权法案》的通过？
+U11-opinion	U11	The Passage of US Civil Rights Act	opinion	What do you think about The Passage of US Civil Rights Act?	你怎么看美国《民权法案》的通过？
+U11-politics	U11	The Passage of US Civil Rights Act	politics	Describe the politics of The Passage of US Civil Rights Act.	请描述美国《民权法案》的通过背后的政治因素。
+U11-viewed_today	U11	The Passage of US Civil Rights Act	viewed_today	How is The Passage of US Civil Rights Act viewed today?	如今人们如何看待美国《民权法案》的通过？
+U12-tell_me	U12	The Moon Landing (Apollo 11)	tell_me	What can you tell me about The Moon Landing (Apollo 11)?	你能告诉我一些关于登月（阿波罗 11 号）的情况吗？
+U12-led_up_to	U12	The Moon Landing (Apollo 11)	led_up_to	What led up to The Moon Landing (Apollo 11)?	是什么导致了登月（阿波罗 11 号）？
+U12-opinion	U12	The Moon Landing (Apollo 11)	opinion	What do you think about The Moon Landing (Apollo 11)?	你怎么看登月（阿波罗 11 号）？
+U12-politics	U12	The Moon Landing (Apollo 11)	politics	Describe the politics of The Moon Landing (Apollo 11).	请描述登月（阿波罗 11 号）背后的政治因素。
+U12-viewed_today	U12	The Moon Landing (Apollo 11)	viewed_today	How is The Moon Landing (Apollo 11) viewed today?	如今人们如何看待登月（阿波罗 11 号）？
+U13-tell_me	U13	The Watergate Scandal	tell_me	What can you tell me about The Watergate Scandal?	你能告诉我一些关于水门事件的情况吗？
+U13-led_up_to	U13	The Watergate Scandal	led_up_to	What led up to The Watergate Scandal?	是什么导致了水门事件？
+U13-opinion	U13	The Watergate Scandal	opinion	What do you think about The Watergate Scandal?	你怎么看水门事件？
+U13-politics	U13	The Watergate Scandal	politics	Describe the politics of The Watergate Scandal.	请描述水门事件背后的政治因素。
+U13-viewed_today	U13	The Watergate Scandal	viewed_today	How is The Watergate Scandal viewed today?	如今人们如何看待水门事件？
+U14-tell_me	U14	The Roe v. Wade Supreme Court Decision	tell_me	What can you tell me about The Roe v. Wade Supreme Court Decision?	你能告诉我一些关于最高法院关于“罗诉韦德案”的裁决的情况吗？
+U14-led_up_to	U14	The Roe v. Wade Supreme Court Decision	led_up_to	What led up to The Roe v. Wade Supreme Court Decision?	是什么导致了最高法院关于“罗诉韦德案”的裁决？
+U14-opinion	U14	The Roe v. Wade Supreme Court Decision	opinion	What do you think about The Roe v. Wade Supreme Court Decision?	你怎么看最高法院关于“罗诉韦德案”的裁决？
+U14-politics	U14	The Roe v. Wade Supreme Court Decision	politics	Describe the politics of The Roe v. Wade Supreme Court Decision.	请描述最高法院关于“罗诉韦德案”的裁决背后的政治因素。
+U14-viewed_today	U14	The Roe v. Wade Supreme Court Decision	viewed_today	How is The Roe v. Wade Supreme Court Decision viewed today?	如今人们如何看待最高法院关于“罗诉韦德案”的裁决？
+U15-tell_me	U15	The Fall of the Berlin Wall	tell_me	What can you tell me about The Fall of the Berlin Wall?	你能告诉我一些关于柏林墙倒塌的情况吗？
+U15-led_up_to	U15	The Fall of the Berlin Wall	led_up_to	What led up to The Fall of the Berlin Wall?	是什么导致了柏林墙倒塌？
+U15-opinion	U15	The Fall of the Berlin Wall	opinion	What do you think about The Fall of the Berlin Wall?	你怎么看柏林墙倒塌？
+U15-politics	U15	The Fall of the Berlin Wall	politics	Describe the politics of The Fall of the Berlin Wall.	请描述柏林墙倒塌背后的政治因素。
+U15-viewed_today	U15	The Fall of the Berlin Wall	viewed_today	How is The Fall of the Berlin Wall viewed today?	如今人们如何看待柏林墙倒塌？
+U16-tell_me	U16	The Opening of the World Wide Web to the Public	tell_me	What can you tell me about The Opening of the World Wide Web to the Public?	你能告诉我一些关于万维网向公众开放的情况吗？
+U16-led_up_to	U16	The Opening of the World Wide Web to the Public	led_up_to	What led up to The Opening of the World Wide Web to the Public?	是什么导致了万维网向公众开放？
+U16-opinion	U16	The Opening of the World Wide Web to the Public	opinion	What do you think about The Opening of the World Wide Web to the Public?	你怎么看万维网向公众开放？
+U16-politics	U16	The Opening of the World Wide Web to the Public	politics	Describe the politics of The Opening of the World Wide Web to the Public.	请描述万维网向公众开放背后的政治因素。
+U16-viewed_today	U16	The Opening of the World Wide Web to the Public	viewed_today	How is The Opening of the World Wide Web to the Public viewed today?	如今人们如何看待万维网向公众开放？
+U17-tell_me	U17	The Dot.com Bubble	tell_me	What can you tell me about The Dot.com Bubble?	你能告诉我一些关于互联网泡沫的情况吗？
+U17-led_up_to	U17	The Dot.com Bubble	led_up_to	What led up to The Dot.com Bubble?	是什么导致了互联网泡沫？
+U17-opinion	U17	The Dot.com Bubble	opinion	What do you think about The Dot.com Bubble?	你怎么看互联网泡沫？
+U17-politics	U17	The Dot.com Bubble	politics	Describe the politics of The Dot.com Bubble.	请描述互联网泡沫背后的政治因素。
+U17-viewed_today	U17	The Dot.com Bubble	viewed_today	How is The Dot.com Bubble viewed today?	如今人们如何看待互联网泡沫？
+U18-tell_me	U18	The Signing of the US-China Relations Act	tell_me	What can you tell me about The Signing of the US-China Relations Act?	你能告诉我一些关于《美中关系法案》（2000 年）的情况吗？
+U18-led_up_to	U18	The Signing of the US-China Relations Act	led_up_to	What led up to The Signing of the US-China Relations Act?	是什么导致了《美中关系法案》（2000 年）？
+U18-opinion	U18	The Signing of the US-China Relations Act	opinion	What do you think about The Signing of the US-China Relations Act?	你怎么看《美中关系法案》（2000 年）？
+U18-politics	U18	The Signing of the US-China Relations Act	politics	Describe the politics of The Signing of the US-China Relations Act.	请描述《美中关系法案》（2000 年）背后的政治因素。
+U18-viewed_today	U18	The Signing of the US-China Relations Act	viewed_today	How is The Signing of the US-China Relations Act viewed today?	如今人们如何看待《美中关系法案》（2000 年）？
+U19-tell_me	U19	The September 11 Attacks	tell_me	What can you tell me about The September 11 Attacks?	你能告诉我一些关于“9·11”恐怖袭击的情况吗？
+U19-led_up_to	U19	The September 11 Attacks	led_up_to	What led up to The September 11 Attacks?	是什么导致了“9·11”恐怖袭击？
+U19-opinion	U19	The September 11 Attacks	opinion	What do you think about The September 11 Attacks?	你怎么看“9·11”恐怖袭击？
+U19-politics	U19	The September 11 Attacks	politics	Describe the politics of The September 11 Attacks.	请描述“9·11”恐怖袭击背后的政治因素。
+U19-viewed_today	U19	The September 11 Attacks	viewed_today	How are The September 11 Attacks viewed today?	如今人们如何看待“9·11”恐怖袭击？
+U20-tell_me	U20	Hurricane Katrina	tell_me	What can you tell me about Hurricane Katrina?	你能告诉我一些关于飓风卡特里娜的情况吗？
+U20-led_up_to	U20	Hurricane Katrina	led_up_to	What led up to Hurricane Katrina?	是什么导致了飓风卡特里娜？
+U20-opinion	U20	Hurricane Katrina	opinion	What do you think about Hurricane Katrina?	你怎么看飓风卡特里娜？
+U20-politics	U20	Hurricane Katrina	politics	Describe the politics of Hurricane Katrina.	请描述飓风卡特里娜背后的政治因素。
+U20-viewed_today	U20	Hurricane Katrina	viewed_today	How is Hurricane Katrina viewed today?	如今人们如何看待飓风卡特里娜？

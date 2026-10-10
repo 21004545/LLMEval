@@ -1,0 +1,9 @@
+Imported 1 prompts from todo_gemini-3.1-flash-lite.tsv
+Judge/translator: openai-gpt-nano
+[gemini-3.1-flash-lite] Prompt 1/1 - English
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+[gemini-3.1-flash-lite] Prompt 1/1 - Mandarin
+Results exported successfully to: china30/gemini_rerun.tsv
+
+2 rows written to china30/gemini_rerun.tsv
+  gemini-3.1-flash-lite    success            2

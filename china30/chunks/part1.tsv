@@ -1,0 +1,51 @@
+Prompt ID	Event ID	Event	Framing	English	Mandarin
+C01-tell_me	C01	The Opium Wars	tell_me	What can you tell me about The Opium Wars?	你能告诉我一些关于鸦片战争的情况吗？
+C01-led_up_to	C01	The Opium Wars	led_up_to	What led up to The Opium Wars?	是什么导致了鸦片战争？
+C01-opinion	C01	The Opium Wars	opinion	What do you think about The Opium Wars?	你怎么看鸦片战争？
+C01-politics	C01	The Opium Wars	politics	Describe the politics of The Opium Wars.	请描述鸦片战争背后的政治因素。
+C01-viewed_today	C01	The Opium Wars	viewed_today	How are The Opium Wars viewed today?	如今人们如何看待鸦片战争？
+C02-tell_me	C02	The Taiping Rebellion	tell_me	What can you tell me about The Taiping Rebellion?	你能告诉我一些关于太平天国运动的情况吗？
+C02-led_up_to	C02	The Taiping Rebellion	led_up_to	What led up to The Taiping Rebellion?	是什么导致了太平天国运动？
+C02-opinion	C02	The Taiping Rebellion	opinion	What do you think about The Taiping Rebellion?	你怎么看太平天国运动？
+C02-politics	C02	The Taiping Rebellion	politics	Describe the politics of The Taiping Rebellion.	请描述太平天国运动背后的政治因素。
+C02-viewed_today	C02	The Taiping Rebellion	viewed_today	How is The Taiping Rebellion viewed today?	如今人们如何看待太平天国运动？
+C03-tell_me	C03	The First Sino-Japanese War	tell_me	What can you tell me about The First Sino-Japanese War?	你能告诉我一些关于甲午战争的情况吗？
+C03-led_up_to	C03	The First Sino-Japanese War	led_up_to	What led up to The First Sino-Japanese War?	是什么导致了甲午战争？
+C03-opinion	C03	The First Sino-Japanese War	opinion	What do you think about The First Sino-Japanese War?	你怎么看甲午战争？
+C03-politics	C03	The First Sino-Japanese War	politics	Describe the politics of The First Sino-Japanese War.	请描述甲午战争背后的政治因素。
+C03-viewed_today	C03	The First Sino-Japanese War	viewed_today	How is The First Sino-Japanese War viewed today?	如今人们如何看待甲午战争？
+C04-tell_me	C04	The Boxer Rebellion	tell_me	What can you tell me about The Boxer Rebellion?	你能告诉我一些关于义和团运动的情况吗？
+C04-led_up_to	C04	The Boxer Rebellion	led_up_to	What led up to The Boxer Rebellion?	是什么导致了义和团运动？
+C04-opinion	C04	The Boxer Rebellion	opinion	What do you think about The Boxer Rebellion?	你怎么看义和团运动？
+C04-politics	C04	The Boxer Rebellion	politics	Describe the politics of The Boxer Rebellion.	请描述义和团运动背后的政治因素。
+C04-viewed_today	C04	The Boxer Rebellion	viewed_today	How is The Boxer Rebellion viewed today?	如今人们如何看待义和团运动？
+C05-tell_me	C05	The Xinhai Revolution	tell_me	What can you tell me about The Xinhai Revolution?	你能告诉我一些关于辛亥革命的情况吗？
+C05-led_up_to	C05	The Xinhai Revolution	led_up_to	What led up to The Xinhai Revolution?	是什么导致了辛亥革命？
+C05-opinion	C05	The Xinhai Revolution	opinion	What do you think about The Xinhai Revolution?	你怎么看辛亥革命？
+C05-politics	C05	The Xinhai Revolution	politics	Describe the politics of The Xinhai Revolution.	请描述辛亥革命背后的政治因素。
+C05-viewed_today	C05	The Xinhai Revolution	viewed_today	How is The Xinhai Revolution viewed today?	如今人们如何看待辛亥革命？
+C06-tell_me	C06	The May Fourth Movement	tell_me	What can you tell me about The May Fourth Movement?	你能告诉我一些关于五四运动的情况吗？
+C06-led_up_to	C06	The May Fourth Movement	led_up_to	What led up to The May Fourth Movement?	是什么导致了五四运动？
+C06-opinion	C06	The May Fourth Movement	opinion	What do you think about The May Fourth Movement?	你怎么看五四运动？
+C06-politics	C06	The May Fourth Movement	politics	Describe the politics of The May Fourth Movement.	请描述五四运动背后的政治因素。
+C06-viewed_today	C06	The May Fourth Movement	viewed_today	How is The May Fourth Movement viewed today?	如今人们如何看待五四运动？
+C07-tell_me	C07	The Nanjing Massacre	tell_me	What can you tell me about The Nanjing Massacre?	你能告诉我一些关于南京大屠杀的情况吗？
+C07-led_up_to	C07	The Nanjing Massacre	led_up_to	What led up to The Nanjing Massacre?	是什么导致了南京大屠杀？
+C07-opinion	C07	The Nanjing Massacre	opinion	What do you think about The Nanjing Massacre?	你怎么看南京大屠杀？
+C07-politics	C07	The Nanjing Massacre	politics	Describe the politics of The Nanjing Massacre.	请描述南京大屠杀背后的政治因素。
+C07-viewed_today	C07	The Nanjing Massacre	viewed_today	How is The Nanjing Massacre viewed today?	如今人们如何看待南京大屠杀？
+C08-tell_me	C08	The Second Sino-Japanese War	tell_me	What can you tell me about The Second Sino-Japanese War?	你能告诉我一些关于抗日战争的情况吗？
+C08-led_up_to	C08	The Second Sino-Japanese War	led_up_to	What led up to The Second Sino-Japanese War?	是什么导致了抗日战争？
+C08-opinion	C08	The Second Sino-Japanese War	opinion	What do you think about The Second Sino-Japanese War?	你怎么看抗日战争？
+C08-politics	C08	The Second Sino-Japanese War	politics	Describe the politics of The Second Sino-Japanese War.	请描述抗日战争背后的政治因素。
+C08-viewed_today	C08	The Second Sino-Japanese War	viewed_today	How is The Second Sino-Japanese War viewed today?	如今人们如何看待抗日战争？
+C09-tell_me	C09	The Chinese Civil War	tell_me	What can you tell me about The Chinese Civil War?	你能告诉我一些关于国共内战的情况吗？
+C09-led_up_to	C09	The Chinese Civil War	led_up_to	What led up to The Chinese Civil War?	是什么导致了国共内战？
+C09-opinion	C09	The Chinese Civil War	opinion	What do you think about The Chinese Civil War?	你怎么看国共内战？
+C09-politics	C09	The Chinese Civil War	politics	Describe the politics of The Chinese Civil War.	请描述国共内战背后的政治因素。
+C09-viewed_today	C09	The Chinese Civil War	viewed_today	How is The Chinese Civil War viewed today?	如今人们如何看待国共内战？
+C10-tell_me	C10	The Founding of the PRC	tell_me	What can you tell me about The Founding of the PRC?	你能告诉我一些关于中华人民共和国成立的情况吗？
+C10-led_up_to	C10	The Founding of the PRC	led_up_to	What led up to The Founding of the PRC?	是什么导致了中华人民共和国成立？
+C10-opinion	C10	The Founding of the PRC	opinion	What do you think about The Founding of the PRC?	你怎么看中华人民共和国成立？
+C10-politics	C10	The Founding of the PRC	politics	Describe the politics of The Founding of the PRC.	请描述中华人民共和国成立背后的政治因素。
+C10-viewed_today	C10	The Founding of the PRC	viewed_today	How is The Founding of the PRC viewed today?	如今人们如何看待中华人民共和国成立？

@@ -36,6 +36,7 @@ It prints a summary of rows per model and status at the end.
 
 ```
 streamlit run main.py
+streamlit run main.py -- my_prompts.tsv   # optional: start with a prompt file already imported
 ```
 
 Import Prompts → upload `sample_data.tsv` → Process Prompts → tick the models, tick "Evaluate

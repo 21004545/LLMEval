@@ -1,0 +1,17 @@
+# App theme (matches the presentation deck) and a cleaner toolbar
+[theme]
+base = "light"
+primaryColor = "#b4543a"
+backgroundColor = "#faf7f2"
+secondaryBackgroundColor = "#f1e9df"
+textColor = "#2b2420"
+font = "DM Sans:https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+borderColor = "#e6dccf"
+baseRadius = "0.6rem"
+baseFontSize = 16
+
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false

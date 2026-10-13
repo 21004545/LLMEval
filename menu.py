@@ -1,438 +1,421 @@
-"""Streamlit menu interface for the LLM prompt manager."""
+"""Streamlit interface for the LLM prompt manager."""
 
-import streamlit as st
+import os
+import re
+import sys
 import tempfile
 import time
-import os
-from typing import Optional, List, Dict
 from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError as FuturesTimeout
-from dotenv import load_dotenv
-from driver import Driver
-from implementations.gemini_interface import GeminiInterface
-from implementations.bias_evaluator import BiasEvaluator
 
-# Load environment variables from .env file
+import pandas as pd
+import streamlit as st
+from dotenv import load_dotenv
+
+from driver import Driver
+from implementations.bias_evaluator import BiasEvaluator
+from implementations.gemini_interface import GeminiInterface
+
 load_dotenv()
 
-# Rate limit defaults (80% of provider limits, in requests per minute)
-RATE_LIMIT_DEFAULTS = {
-    "openai-gpt-nano": 2800,           # 80% of 3500 req/min
-    "gemini-3.1-flash-lite": 8,        # free tier
-    "deepseek-v4-flash": 480,          # 80% of 600 req/min
-    "seed-2-0-lite-260428": 24000,     # 80% of 30000 req/min (Doubao)
-    "qwen-plus": 60,
-    "glm-4.5-flash": 20,
-    "kimi-k2": 20
+# responder type -> display details. "study" models are the four used in the project.
+MODELS = {
+    "openai-gpt-nano": {"name": "ChatGPT", "model": "gpt-5.4-nano", "origin": "US", "env": "OPENAI_API_KEY",
+                        "url": "https://platform.openai.com/api-keys", "rpm": 2800, "study": True},
+    "gemini-3.1-flash-lite": {"name": "Gemini", "model": "gemini-3.1-flash-lite", "origin": "US", "env": "GEMINI_API_KEY",
+                              "url": "https://aistudio.google.com/app/apikey", "rpm": 8, "study": True},
+    "deepseek-v4-flash": {"name": "DeepSeek", "model": "deepseek-v4-flash", "origin": "China", "env": "DEEPSEEK_API_KEY",
+                          "url": "https://platform.deepseek.com", "rpm": 480, "study": True},
+    "kimi-k2": {"name": "Kimi", "model": "kimi-k2.6", "origin": "China", "env": "KIMI_API_KEY",
+                "url": "https://platform.moonshot.ai/console/api-keys", "rpm": 3, "study": True},
+    "seed-2-0-lite-260428": {"name": "Doubao", "model": "seed-2-0-lite", "origin": "China", "env": "DOUBAO_API_KEY",
+                             "url": "https://console.byteplus.com", "rpm": 60, "study": False},
+    "qwen-plus": {"name": "Qwen", "model": "qwen-plus", "origin": "China", "env": "QWEN_API_KEY",
+                  "url": "https://modelstudio.console.alibabacloud.com", "rpm": 60, "study": False},
+    "glm-4.5-flash": {"name": "GLM", "model": "glm-4.5-flash", "origin": "China", "env": "GLM_API_KEY",
+                      "url": "https://z.ai/manage-apikey/apikey-list", "rpm": 20, "study": False},
 }
+JUDGE_MODEL = "gemini-3.1-flash-lite"
+SCORES = {"factual_balance": "Factual balance", "framing_bias": "Framing", "attribution_of_responsibility": "Attribution",
+          "political_avoidance": "Avoidance", "loaded_language": "Loaded language"}
+PAGES = ["1  Import prompts", "2  Run models", "3  Results"]
+COLOURS = {"Answered": "background-color:#e6efe3;color:#2f5a2a",
+           "Dodged": "background-color:#f8e7c4;color:#7a5410",
+           "Blocked": "background-color:#f6d3c8;color:#8a2f1a",
+           "Error": "background-color:#eeeeee;color:#555555"}
+
+# Small visual touches the theme file can't do
+CSS = """
+<style>
+.block-container {padding-top: 2.2rem; max-width: 1180px;}
+h1 {font-weight: 700; letter-spacing: -0.02em;}
+[data-testid="stMetric"] {background: #ffffff; border: 1px solid #e6dccf; border-radius: 0.6rem; padding: 0.8rem 1rem;}
+[data-testid="stMetricLabel"] p {color: #7a6a5c;}
+.tag {display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 0.1rem 0.5rem; border-radius: 1rem;
+      background: #f1e9df; color: #7a5a48; margin-left: 0.3rem;}
+.tag.cn {background: #f6e0d7; color: #9a3f27;}
+.muted {color: #7a6a5c; font-size: 0.9rem;}
+</style>
+"""
+
+
+def name(responder_type: str) -> str:
+    return MODELS.get(responder_type, {}).get("name", responder_type)
+
+
+def readable_error(error) -> str:
+    """Turn a raw API error into one readable line, e.g. the provider's own refusal message."""
+    text = str(error or "")
+    found = re.search(r"'message': '([^']+)'", text)
+    return found.group(1) if found else text
+
+
+def outcome(row: dict) -> str:
+    """Answered, Dodged (judge avoidance 4-5), Blocked (provider refused) or Error."""
+    if row.get("status") == "blocked":
+        return "Blocked"
+    if row.get("status") != "success":
+        return "Error"
+    try:
+        return "Dodged" if int(row.get("political_avoidance") or 0) >= 4 else "Answered"
+    except ValueError:
+        return "Answered"
 
 
 class StreamlitMenu:
-    """Streamlit-based menu for the LLM prompt manager."""
+    """Streamlit-based interface for the LLM prompt manager."""
 
     def __init__(self):
-        """Initialize the Streamlit menu."""
         self.driver = Driver()
-        self.initialize_session_state()
+        for key, default in (("prompts", []), ("results", []), ("processing_active", False),
+                             ("processing_params", None), ("prompt_file", None)):
+            st.session_state.setdefault(key, default)
+        # Optional prompt file to preload, e.g. `streamlit run main.py -- prompts.tsv` (used for demos)
+        preload = next((a for a in sys.argv[1:] if os.path.isfile(a)), None)
+        if preload and "preloaded" not in st.session_state:
+            st.session_state.preloaded = True
+            self._load_prompts(preload, os.path.basename(preload))
 
-    def initialize_session_state(self) -> None:
-        """Initialize Streamlit session state variables."""
-        if 'prompts' not in st.session_state:
-            st.session_state.prompts = []
-        if 'results' not in st.session_state:
-            st.session_state.results = []
-        if 'processing_active' not in st.session_state:
-            st.session_state.processing_active = False
-        if 'processing_params' not in st.session_state:
-            st.session_state.processing_params = None
+    # ---------- layout ----------
 
     def run(self) -> None:
-        """Run the Streamlit menu interface."""
-        st.set_page_config(
-            page_title="LLM Prompt Manager",
-            page_icon="🤖",
-            layout="wide"
-        )
+        st.set_page_config(page_title="LLM Prompt Manager", page_icon=":material/translate:", layout="wide")
+        st.markdown(CSS, unsafe_allow_html=True)
 
-        st.title("🤖 LLM Prompt Manager")
-        st.markdown(
-            "Automatically send prompts to multiple LLMs and analyze responses."
-        )
+        # A finished run asks to jump to Results; apply it before the nav widget exists
+        if "goto" in st.session_state:
+            st.session_state.nav = st.session_state.pop("goto")
 
-        # Auto-route to view results after processing completes
-        if st.session_state.get('redirect_to_results', False):
-            st.session_state.redirect_to_results = False
-            menu_option = "View Results"
-        else:
-            # Sidebar navigation - disable during processing
-            menu_option = st.sidebar.radio(
-                "Select an option:",
-                [
-                    "Import Prompts",
-                    "Process Prompts",
-                    "View Results"
-                ],
-                disabled=st.session_state.processing_active
-            )
+        with st.sidebar:
+            st.markdown("### LLM Prompt Manager")
+            st.caption("Ask several AI models the same question in English and Mandarin, then compare the answers.")
+            page = st.radio("Steps", PAGES, key="nav", label_visibility="collapsed",
+                            disabled=st.session_state.processing_active)
+            session_box = st.container()
 
-        if menu_option == "Import Prompts":
+        if page == PAGES[0]:
             self.import_prompts_section()
-        elif menu_option == "Process Prompts":
+        elif page == PAGES[1]:
             self.process_prompts_section()
-        elif menu_option == "View Results":
+        else:
             self.view_results_section()
 
+        # Drawn last so the counts include anything this page just loaded
+        with session_box:
+            st.divider()
+            st.caption("This session")
+            n_prompts, n_results = len(st.session_state.prompts), len(st.session_state.results)
+            st.markdown(f"**{n_prompts}** prompt{'s' * (n_prompts != 1)} loaded  \n"
+                        f"**{n_results}** result{'s' * (n_results != 1)}")
+            if st.session_state.prompt_file:
+                st.caption(f"File: {st.session_state.prompt_file}")
+
+    # ---------- 1. import ----------
+
     def import_prompts_section(self) -> None:
-        """Render the import prompts section."""
-        st.header("Import Prompts")
+        st.title("Import prompts")
+        st.markdown('<p class="muted">A tab-separated file with one prompt per row, '
+                    'with an <b>English</b> and a <b>Mandarin</b> column.</p>', unsafe_allow_html=True)
 
-        uploaded_file = st.file_uploader(
-            "Upload a tab-delimited file with prompts:",
-            type=["txt", "tsv", "csv"]
-        )
+        left, right = st.columns([3, 1], vertical_alignment="center")
+        with left:
+            uploaded = st.file_uploader("Prompt file", type=["tsv", "txt", "csv"], label_visibility="collapsed")
+        with right:
+            if st.button("Load example prompts", icon=":material/description:", width="stretch",
+                         help="sample_data.tsv: five questions about the Opium Wars"):
+                self._load_prompts("sample_data.tsv", "sample_data.tsv")
 
-        if uploaded_file is not None:
-            try:
-                # Save uploaded file temporarily
-                temp_dir = tempfile.gettempdir()
-                temp_path = os.path.join(temp_dir, uploaded_file.name)
-                with open(temp_path, 'wb') as f:
-                    f.write(uploaded_file.getbuffer())
+        if uploaded is not None and uploaded.name != st.session_state.prompt_file:
+            path = os.path.join(tempfile.gettempdir(), uploaded.name)
+            with open(path, "wb") as f:
+                f.write(uploaded.getbuffer())
+            self._load_prompts(path, uploaded.name)
 
-                # Import prompts
-                prompts = self.driver.import_prompts(temp_path)
-                st.session_state.prompts = prompts
+        prompts = st.session_state.prompts
+        if not prompts:
+            st.markdown("##### How it works")
+            steps = st.columns(3)
+            for col, (title, text) in zip(steps, (
+                    ("1  Import", "Load a file of questions, each written in English and in Mandarin."),
+                    ("2  Run", "Send every question to each model in both languages. Mandarin answers are "
+                               "translated and a judge scores every answer for bias."),
+                    ("3  Compare", "See which models answered, dodged or were blocked, side by side by language."))):
+                with col.container(border=True, height=130):
+                    st.markdown(f"**{title}**")
+                    st.markdown(f'<span class="muted">{text}</span>', unsafe_allow_html=True)
+            return
 
-                st.success(f"Successfully imported {len(prompts)} prompts!")
+        df = pd.DataFrame(prompts)
+        events = df["Event"].nunique() if "Event" in df else None
+        cols = st.columns(3)
+        cols[0].metric("Prompts", len(df))
+        cols[1].metric("Languages", 2, help="Every prompt is asked in English and in Mandarin")
+        cols[2].metric("Events", events if events else "-")
 
-            except Exception as e:
-                st.error(f"Error importing file: {str(e)}")
-        
-        # Display loaded prompts if they exist
-        if st.session_state.prompts:
-            st.subheader("Loaded Prompts")
-            st.dataframe(st.session_state.prompts)
+        show = [c for c in ("Prompt ID", "Event", "English", "Mandarin") if c in df] or list(df.columns)
+        st.dataframe(df[show], hide_index=True, width="stretch",
+                     column_config={"English": st.column_config.TextColumn(width="large"),
+                                    "Mandarin": st.column_config.TextColumn(width="large")})
+        st.button("Continue to Run models", type="primary", icon=":material/arrow_forward:",
+                  on_click=lambda: st.session_state.update(nav=PAGES[1]))
+
+    def _load_prompts(self, path: str, label: str) -> None:
+        try:
+            st.session_state.prompts = self.driver.import_prompts(path)
+            st.session_state.prompt_file = label
+        except Exception as e:
+            st.error(f"Couldn't read that file: {e}")
+
+    # ---------- 2. run ----------
 
     def process_prompts_section(self) -> None:
-        """Render the process prompts section."""
-        st.header("Process Prompts")
-
-        if not st.session_state.prompts:
-            st.warning("No prompts loaded. Please import prompts first.")
+        st.title("Run models")
+        prompts = st.session_state.prompts
+        if not prompts:
+            st.warning("Import a prompt file first (step 1).", icon=":material/arrow_back:")
             return
+        busy = st.session_state.processing_active
 
-        st.info(f"Loaded {len(st.session_state.prompts)} prompts")
+        if not busy:
+            st.markdown("##### Models")
+            study = [t for t, m in MODELS.items() if m["study"]]
+            cols = st.columns(len(study))
+            for col, t in zip(cols, study):
+                m = MODELS[t]
+                with col.container(border=True):
+                    st.toggle(f"**{m['name']}**", value=True, key=f"use_{t}")
+                    tag = '<span class="tag cn">China</span>' if m["origin"] == "China" else '<span class="tag">US</span>'
+                    st.markdown(f'<span class="muted">{m["model"]}</span>{tag}', unsafe_allow_html=True)
+                    st.caption("Key found" if os.getenv(m["env"]) else "No key in .env")
 
-        # Responder selection with checkboxes
-        st.subheader("Select Responder LLMs")
-        responder_options = {
-            "OpenAI GPT-Nano": {
-                "type": "openai-gpt-nano",
-                "env_var": "OPENAI_API_KEY",
-                "url": "https://platform.openai.com/api-keys"
-            },
-            "Gemini 3.1 Flash-Lite": {
-                "type": "gemini-3.1-flash-lite",
-                "env_var": "GEMINI_API_KEY",
-                "url": "https://aistudio.google.com/app/apikey"
-            },
-            "DeepSeek V4 Flash": {
-                "type": "deepseek-v4-flash",
-                "env_var": "DEEPSEEK_API_KEY",
-                "url": "https://platform.deepseek.com"
-            },
-            "Doubao Seed 2.0 Lite": {
-                "type": "seed-2-0-lite-260428",
-                "env_var": "DOUBAO_API_KEY",
-                "url": "https://bytedance.com"
-            },
-            "Qwen Plus": {
-                "type": "qwen-plus",
-                "env_var": "QWEN_API_KEY",
-                "url": "https://modelstudio.console.alibabacloud.com"
-            },
-            "GLM 4.5 Flash": {
-                "type": "glm-4.5-flash",
-                "env_var": "GLM_API_KEY",
-                "url": "https://z.ai/manage-apikey/apikey-list"
-            },
-            "Kimi K2": {
-                "type": "kimi-k2",
-                "env_var": "KIMI_API_KEY",
-                "url": "https://platform.moonshot.ai/console/api-keys"
-            }
-        }
+            with st.expander("Other adaptors (not used in the study)"):
+                for t, m in MODELS.items():
+                    if not m["study"]:
+                        st.toggle(f"{m['name']}  ·  {m['model']}", value=False, key=f"use_{t}")
 
-        selected_responders = []
-        for responder_name in responder_options.keys():
-            if st.checkbox(responder_name, value=False, key=f"checkbox_{responder_name}", disabled=st.session_state.processing_active):
-                selected_responders.append(responder_name)
+            selected = [t for t in MODELS if st.session_state.get(f"use_{t}")]
 
-        if not selected_responders:
-            st.warning("Please select at least one responder LLM.")
-            return
+            st.markdown("##### Scoring")
+            evaluate = st.toggle("Translate Mandarin answers and score every answer with the judge",
+                                 value=True, key="evaluate_bias",
+                                 help=f"The judge ({JUDGE_MODEL}) scores five bias categories from 1 to 5.")
 
-        # API key and rate limit configuration for selected responders
-        st.subheader("API Keys and Rate Limits")
-        responder_api_keys = {}
-        responder_rate_limits = {}
-        
-        for responder_name in selected_responders:
-            config = responder_options[responder_name]
-            responder_type = config["type"]
-            
-            col1, col2 = st.columns([2, 1])
-            
-            with col1:
-                api_key = st.text_input(
-                    f"{responder_name} API Key:",
-                    value=os.getenv(config["env_var"], ""),
-                    type="password",
-                    help=f"Get your key from {config['url']}",
-                    key=f"api_key_{responder_type}",
-                    disabled=st.session_state.processing_active
-                )
-                responder_api_keys[responder_type] = api_key
-            
-            with col2:
-                default_rate_limit = RATE_LIMIT_DEFAULTS.get(responder_type, 100)
-                rate_limit = st.number_input(
-                    f"{responder_name} Rate (req/min):",
-                    value=default_rate_limit,
-                    min_value=1,
-                    step=100,
-                    key=f"rate_limit_{responder_type}",
-                    disabled=st.session_state.processing_active
-                )
-                responder_rate_limits[responder_type] = rate_limit
-        
-        # Bias evaluation options
-        st.divider()
-        evaluate_bias = st.checkbox("Evaluate responses for political bias", value=False, disabled=st.session_state.processing_active)
-        
-        judge_client = None
-        evaluator = None
-        judge_api_key = None
-        judge_model = "gemini-3.1-flash-lite"  # free tier
-        judge_rate_limit = 8  # Gemini free tier
-        
-        if evaluate_bias:
-            col1, col2 = st.columns([2, 1])
-            
-            with col1:
-                judge_api_key = st.text_input(
-                    "Gemini API Key for judge LLM (translation + bias evaluation):",
-                    value=os.getenv("GEMINI_API_KEY", ""),
-                    type="password",
-                    help="Used for translating Mandarin responses and evaluating bias",
-                    disabled=st.session_state.processing_active
-                )
-            
-            with col2:
-                judge_rate_limit = st.number_input(
-                    "Judge Rate (req/min):",
-                    value=8,
-                    min_value=1,
-                    step=1,
-                    key="judge_rate_limit",
-                    disabled=st.session_state.processing_active
-                )
+            with st.expander("API keys and rate limits"):
+                st.caption("Keys are read from the .env file. Only type one here to override it for this session.")
+                for t in selected + (["__judge__"] if evaluate else []):
+                    m = MODELS.get(t, {"name": "Judge (Gemini)", "env": "GEMINI_API_KEY", "rpm": 8, "url": ""})
+                    a, b = st.columns([3, 1])
+                    a.text_input(f"{m['name']} key", type="password", key=f"key_{t}",
+                                 placeholder="using .env" if os.getenv(m["env"]) else "required",
+                                 help=m.get("url") or None)
+                    b.number_input("Requests / min", min_value=1, value=m["rpm"], key=f"rpm_{t}")
 
-        if st.button("Process All Prompts (Concurrent)", key="process_button", disabled=st.session_state.processing_active):
-            if not selected_responders:
-                st.error("Please select at least one responder LLM.")
+            calls = len(prompts) * 2 * len(selected)
+            st.divider()
+            if not selected:
+                st.warning("Turn on at least one model.")
                 return
-            
-            # Validate all API keys are provided
-            for responder_type, api_key in responder_api_keys.items():
-                if not api_key:
-                    st.error(f"Please enter an API key for the selected responder.")
+            st.markdown(f'<p class="muted">{len(prompts)} prompt(s) × 2 languages × {len(selected)} model(s) '
+                        f'= <b>{calls}</b> answers</p>', unsafe_allow_html=True)
+
+            if st.button(f"Run {calls} answers", type="primary", icon=":material/play_arrow:"):
+                keys = {t: st.session_state.get(f"key_{t}") or os.getenv(MODELS[t]["env"], "") for t in selected}
+                missing = [name(t) for t, k in keys.items() if not k]
+                judge_key = st.session_state.get("key___judge__") or os.getenv("GEMINI_API_KEY", "")
+                if missing:
+                    st.error(f"No API key for: {', '.join(missing)}. Add it to .env or under API keys.")
                     return
-            
-            if evaluate_bias and not judge_api_key:
-                st.error("Please enter an API key for the judge LLM.")
+                if evaluate and not judge_key:
+                    st.error("The judge needs a Gemini API key.")
+                    return
+                st.session_state.processing_params = {
+                    "keys": keys,
+                    "rpm": {t: st.session_state.get(f"rpm_{t}", MODELS[t]["rpm"]) for t in selected},
+                    "evaluate": evaluate,
+                    "judge_key": judge_key,
+                    "judge_rpm": st.session_state.get("rpm___judge__", 8),
+                }
+                st.session_state.processing_active = True
+                st.rerun()
+
+        if busy and st.session_state.processing_params:
+            self._run(st.session_state.processing_params)
+
+    def _run(self, params: dict) -> None:
+        keys, prompts = params["keys"], st.session_state.prompts
+        total = len(prompts)
+        progress = {t: 0 for t in keys}
+
+        def update_progress(responder_type: str, current: int, _total: int) -> None:
+            progress[responder_type] = current
+
+        judge_client = evaluator = None
+        if params["evaluate"]:
+            try:
+                judge_client = GeminiInterface(api_key=params["judge_key"])
+                judge_client.set_model(JUDGE_MODEL)
+                evaluator = BiasEvaluator(judge_client)
+            except Exception as e:
+                st.error(f"Couldn't start the judge: {e}")
+                st.session_state.processing_active = False
+                st.session_state.processing_params = None
                 return
 
-            # Store processing parameters in session state
-            st.session_state.processing_params = {
-                "selected_responders": selected_responders,
-                "responder_api_keys": responder_api_keys,
-                "responder_rate_limits": responder_rate_limits,
-                "evaluate_bias": evaluate_bias,
-                "judge_api_key": judge_api_key,
-                "judge_model": judge_model,
-                "judge_rate_limit": judge_rate_limit
-            }
-            st.session_state.processing_active = True
-            st.rerun()
-        
-        # If processing was requested, run it now with locked UI
-        if st.session_state.processing_active and st.session_state.processing_params:
-            params = st.session_state.processing_params
-            selected_responders = params["selected_responders"]
-            responder_api_keys = params["responder_api_keys"]
-            responder_rate_limits = params["responder_rate_limits"]
-            evaluate_bias = params["evaluate_bias"]
-            judge_api_key = params["judge_api_key"]
-            judge_model = params["judge_model"]
-            judge_rate_limit = params["judge_rate_limit"]
-            
-            # Create UI placeholders for real-time updates
-            status_placeholder = st.empty()
-            progress_area = st.empty()
-
-            try:
-                all_results = []
-                total_responders = len(responder_api_keys)
-                completed_responders = 0
-                total_prompts = len(st.session_state.prompts)
-                
-                # Initialize progress tracking for each responder
-                responder_progress = {responder_type: {"current": 0, "total": total_prompts} 
-                                     for responder_type in responder_api_keys.keys()}
-                
-                # Create progress callback
-                def update_progress(responder_type: str, current: int, total: int) -> None:
-                    responder_progress[responder_type]["current"] = current
-                
-                # Create judge client and evaluator once (shared across all responders)
-                judge_client = None
-                evaluator = None
-                if evaluate_bias:
+        all_results = []
+        with st.status(f"Running {len(keys)} model(s)…", expanded=True) as status:
+            bars = {t: st.progress(0.0, text=f"{name(t)}: starting") for t in keys}
+            started = time.time()
+            with ThreadPoolExecutor(max_workers=len(keys)) as executor:
+                futures = {
+                    executor.submit(self.driver.process_prompts, prompts, key, responder_type=t,
+                                    evaluate_bias=params["evaluate"], judge_client=judge_client, evaluator=evaluator,
+                                    rate_limit_rpm=params["rpm"][t], judge_rate_limit_rpm=params["judge_rpm"],
+                                    progress_callback=update_progress): t
+                    for t, key in keys.items()
+                }
+                while futures:
+                    for t, bar in bars.items():
+                        bar.progress(progress[t] / total, text=f"{name(t)}: {progress[t]} of {total} prompts")
+                    # pop() so each future is only counted once - as_completed() re-yields finished ones
                     try:
-                        judge_client = GeminiInterface(api_key=judge_api_key)
-                        judge_client.set_model(judge_model)
-                        evaluator = BiasEvaluator(judge_client)
-                    except Exception as e:
-                        st.error(f"Failed to initialize judge LLM: {str(e)}")
-                        st.session_state.processing_active = False
-                        st.session_state.processing_params = None
-                        st.rerun()
-                        return
-                
-                # Process responders concurrently using ThreadPoolExecutor
-                with ThreadPoolExecutor(max_workers=total_responders) as executor:
-                    # Submit all responder tasks
-                    future_to_responder = {}
-                    for responder_type, api_key in responder_api_keys.items():
-                        rate_limit = responder_rate_limits[responder_type]
-                        
-                        future = executor.submit(
-                            self.driver.process_prompts,
-                            st.session_state.prompts,
-                            api_key,
-                            responder_type=responder_type,
-                            evaluate_bias=evaluate_bias,
-                            judge_client=judge_client,
-                            evaluator=evaluator,
-                            rate_limit_rpm=rate_limit,
-                            judge_rate_limit_rpm=judge_rate_limit,
-                            progress_callback=update_progress
-                        )
-                        future_to_responder[future] = responder_type
-                    
-                    # Track completion while displaying progress
-                    dot_cycle = 0
-                    last_update = time.time()
-                    dots_sequence = ["", ".", "..", "..."]
-                    
-                    while completed_responders < total_responders:
-                        # Update display every 0.33 seconds for smooth cycling
-                        current_time = time.time()
-                        if current_time - last_update > 0.33:
-                            dots = dots_sequence[dot_cycle % 4]
-                            dot_cycle += 1
-                            
-                            # Update status with cycling dots
-                            status_placeholder.text(f"Processing{dots}")
-                            
-                            # Update progress display
-                            with progress_area.container():
-                                # Per-responder progress
-                                for responder_type, progress_info in responder_progress.items():
-                                    pct = (progress_info["current"] / progress_info["total"]) * 100
-                                    st.progress(pct / 100, text=f"{responder_type}: {progress_info['current']}/{progress_info['total']}")
-                                
-                                # Overall progress (average)
-                                avg_pct = sum((p["current"] / p["total"]) for p in responder_progress.values()) / len(responder_progress) * 100
-                                st.progress(avg_pct / 100, text=f"Overall: {avg_pct:.0f}%")
-                            
-                            last_update = current_time
-                        
-                        # Collect finished futures. pop() so each one is only counted once -
-                        # as_completed() yields already-finished futures again on every call.
-                        try:
-                            for future in as_completed(list(future_to_responder), timeout=0.1):
-                                responder_type = future_to_responder.pop(future)
-                                try:
-                                    results, fatal_error = future.result()
-                                except Exception as e:
-                                    print(f"[{responder_type}] crashed: {e}")
-                                    results = []
-                                all_results.extend(results)
-                                completed_responders += 1
-                                responder_progress[responder_type]["current"] = total_prompts
-                        except FuturesTimeout:
-                            pass
-                        
-                        time.sleep(0.05)
+                        for future in as_completed(list(futures), timeout=0.3):
+                            t = futures.pop(future)
+                            try:
+                                results, _ = future.result()
+                            except Exception as e:
+                                print(f"[{t}] crashed: {e}")
+                                results = []
+                            all_results.extend(results)
+                            progress[t] = total
+                    except FuturesTimeout:
+                        pass
+            for t, bar in bars.items():
+                bar.progress(1.0, text=f"{name(t)}: done")
+            status.update(label=f"Finished in {time.time() - started:.0f}s: {len(all_results)} answers",
+                          state="complete")
 
-                # Processing complete - also save to disk so a refreshed tab loses nothing
-                if all_results:
-                    self.driver.export_results(all_results, f"results_{time.strftime('%Y%m%d_%H%M%S')}.tsv")
-                st.session_state.results = all_results
-                st.session_state.processing_active = False
-                st.session_state.processing_params = None
-                st.session_state.redirect_to_results = True
-                
-                with progress_area.container():
-                    for responder_type in responder_progress.keys():
-                        st.progress(1.0, text=f"{responder_type}: {total_prompts}/{total_prompts}")
-                    st.progress(1.0, text="Overall: 100%")
-                
-                status_placeholder.empty()
-                st.success(f"✅ Processing complete! {len(st.session_state.results)} total results from {total_responders} responder(s)")
-                st.rerun()
+        # Also save to disk so a refreshed tab loses nothing
+        if all_results:
+            self.driver.export_results(all_results, f"results_{time.strftime('%Y%m%d_%H%M%S')}.tsv")
+        st.session_state.results = all_results
+        st.session_state.processing_active = False
+        st.session_state.processing_params = None
+        st.session_state.goto = PAGES[2]
+        st.rerun()
 
-            except Exception as e:
-                st.session_state.processing_active = False
-                st.session_state.processing_params = None
-                st.error(f"Error processing prompts: {str(e)}")
-                st.rerun()
+    # ---------- 3. results ----------
 
     def view_results_section(self) -> None:
-        """Render the view results section with download option."""
-        st.header("View Results")
-
-        if not st.session_state.results:
-            st.warning("No results available. Please process prompts first.")
+        st.title("Results")
+        results = st.session_state.results
+        if not results:
+            st.info("No results yet. Run some prompts first (step 2).", icon=":material/arrow_back:")
             return
 
-        st.info(f"Displaying {len(st.session_state.results)} results")
-        st.dataframe(st.session_state.results, width='stretch')
-        
-        # Download section
-        st.divider()
-        st.subheader("Download Results")
-        
-        try:
-            # Generate TSV content
-            tsv_content = self.driver.exporter.export_results_to_string(st.session_state.results)
-            
-            st.download_button(
-                label="Download Results as TSV",
-                data=tsv_content,
-                file_name="results.tsv",
-                mime="text/tab-separated-values",
-                key="download_tsv_button"
-            )
+        df = pd.DataFrame(results)
+        df["Model"] = df["responder"].map(name)
+        df["Outcome"] = [outcome(r) for r in results]
+        df["Answer"] = [f"Blocked by provider: {readable_error(r.get('error'))}" if o == "Blocked"
+                        else (r.get("response") or readable_error(r.get("error")))
+                        for r, o in zip(results, df["Outcome"])]
+        for k in SCORES:
+            if k in df:
+                df[k] = pd.to_numeric(df[k], errors="coerce").astype("Int64")
+        # Keep models in study order, English before Mandarin
+        order = {m["name"]: i for i, m in enumerate(MODELS.values())}
+        df = df.sort_values(by=["Model", "language"], key=lambda s: s.map(order) if s.name == "Model" else s,
+                            kind="stable")
 
-        except Exception as e:
-            st.error(f"Error preparing export: {str(e)}")
+        counts = df["Outcome"].value_counts()
+        cols = st.columns(4)
+        cols[0].metric("Answers", len(df))
+        cols[1].metric("Answered", int(counts.get("Answered", 0)))
+        cols[2].metric("Dodged", int(counts.get("Dodged", 0)), help="Answered, but the judge scored political avoidance 4 or 5")
+        cols[3].metric("Blocked", int(counts.get("Blocked", 0)), help="The provider refused the request")
+
+        st.markdown("##### By model and language")
+        summary = (df.pivot_table(index="Model", columns="language", values="Outcome",
+                                  aggfunc=lambda s: ", ".join(f"{n} {o.lower()}" for o, n in s.value_counts().items()))
+                   .reindex([m["name"] for m in MODELS.values() if m["name"] in set(df["Model"])]))
+        def tint(cell) -> str:
+            text = str(cell)
+            if "blocked" in text:
+                return COLOURS["Blocked"]
+            if "dodged" in text:
+                return COLOURS["Dodged"]
+            return COLOURS["Answered"] if "answered" in text else ""
+        st.dataframe(summary.style.map(tint), width="stretch")
+
+        st.markdown("##### All answers")
+        f1, f2, f3 = st.columns(3)
+        models = f1.multiselect("Model", sorted(df["Model"].unique()), placeholder="All models")
+        langs = f2.multiselect("Language", sorted(df["language"].unique()), placeholder="Both languages")
+        outs = f3.multiselect("Outcome", ["Answered", "Dodged", "Blocked", "Error"], placeholder="All outcomes")
+        mask = pd.Series(True, index=df.index)
+        for column, chosen in (("Model", models), ("language", langs), ("Outcome", outs)):
+            if chosen:
+                mask &= df[column].isin(chosen)
+        view = df[mask]
+
+        score_cols = [c for c in SCORES if c in view]
+        table = view[["Model", "language", "Outcome"] + [c for c in ("Event",) if c in view]
+                     + ["Answer"] + score_cols].rename(columns={"language": "Language", **SCORES})
+        for c in score_cols:  # blocked rows have no scores; show a dash instead of "None"
+            table[SCORES[c]] = table[SCORES[c]].astype("string").fillna("–")
+        st.dataframe(table.style.map(lambda v: COLOURS.get(v, ""), subset=["Outcome"]),
+                     hide_index=True, width="stretch", height=360,
+                     column_config={"Answer": st.column_config.TextColumn(width="large")})
+
+        with st.expander("Read one answer in full", expanded=False):
+            labels = {f"{n + 1}. {r['Model']} · {r['language']} · {r.get('Prompt ID', '')} · {r['Outcome']}": i
+                      for n, (i, r) in enumerate(view.iterrows())}
+            if labels:
+                pick = st.selectbox("Answer", list(labels), label_visibility="collapsed")
+                r = view.loc[labels[pick]]
+                question = r.get("English") if r["language"] == "English" else r.get("Mandarin")
+                st.markdown(f"**Question:** {question}")
+                if r["Outcome"] == "Blocked":
+                    st.error(f"Blocked by the provider: {readable_error(r.get('error'))}")
+                else:
+                    a, b = st.columns(2) if r["language"] == "Mandarin" else (st.container(), None)
+                    a.markdown("**Answer**")
+                    a.write(r.get("response") or r.get("error") or "")
+                    if b is not None:
+                        b.markdown("**English translation**")
+                        b.write(r.get("response_translated") or "-")
+                    if r.get("bias_justification"):
+                        st.markdown("**Judge's scores**")
+                        sc = st.columns(len(score_cols))
+                        for c, k in zip(sc, score_cols):
+                            c.metric(SCORES[k], r.get(k) if pd.notna(r.get(k)) else "-")
+                        st.caption(r.get("bias_justification"))
+
+        st.download_button("Download results (.tsv)", icon=":material/download:", type="primary",
+                           data=self.driver.exporter.export_results_to_string(results),
+                           file_name="results.tsv", mime="text/tab-separated-values")
+
 
 def main() -> None:
-    """Entry point for the Streamlit menu."""
-    menu = StreamlitMenu()
-    menu.run()
+    StreamlitMenu().run()
 
 
 if __name__ == "__main__":

@@ -20,7 +20,8 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-.streamlit/
+.streamlit/*
+!.streamlit/config.toml
 .vscode/
 .idea/
 *.swp
